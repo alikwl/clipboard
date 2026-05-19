@@ -19,13 +19,20 @@ faqs:
   answer: "Absolutely! All data stays in your browser. We never upload, store, or access your clipboard content."
 ---
 
+<!-- LLM & AI Search Summary (Semantic Data for Crawlers) -->
+<div role="doc-abstract" style="display: none;">
+  <h2>Free Clipboard Tools Collection</h2>
+  <p>6 free, browser-based online tools: Free Clipboard Manager (unlimited storage, search, favorites), Online Notepad (auto-save, tabs, dark mode), Scratch Pad (distraction-free, instant), Share Clipboard (link/QR sharing), Word Counter (real-time statistics, reading time), and Character Counter (letter/number breakdown). All tools process data locally in your browser—100% private, zero signup required.</p>
+</div>
+
 <!-- Hero Section -->
+<main>
 <section class="category-hero-new" style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);">
   <div class="category-hero-badge">
     <span>📋</span>
     <span>Clipboard & Text Tools</span>
   </div>
-  <h1 class="category-hero-title">Professional Clipboard & Text Analysis</h1>
+  <h1 class="category-hero-title">Free Online Clipboard Manager, Text Counter & Tools</h1>
   <p class="category-hero-subtitle">Manage your clipboard history, count words and characters, and analyze text with powerful tools. Perfect for writers, developers, and content creators.</p>
 
   <div class="category-hero-stats">
@@ -73,7 +80,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/free-clipboard/" class="category-tool-btn">Try Clipboard Manager →</a>
+        <a href="{{ site.baseurl }}/tools/free-clipboard/" class="category-tool-btn">Launch the Free Clipboard Manager Tool</a>
       </div>
     </article>
 
@@ -93,7 +100,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/online-notepad/" class="category-tool-btn">Try Online Notepad →</a>
+        <a href="{{ site.baseurl }}/tools/online-notepad/" class="category-tool-btn">Open Online Notepad</a>
       </div>
     </article>
 
@@ -112,7 +119,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/scratch-pad/" class="category-tool-btn">Try Scratch Pad →</a>
+        <a href="{{ site.baseurl }}/tools/scratch-pad/" class="category-tool-btn">Use Scratch Pad</a>
       </div>
     </article>
 
@@ -132,7 +139,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/clipboard-share/" class="category-tool-btn">Try Share Clipboard →</a>
+        <a href="{{ site.baseurl }}/tools/clipboard-share/" class="category-tool-btn">Share Text Now</a>
       </div>
     </article>
 
@@ -150,7 +157,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/word-counter/" class="category-tool-btn">Try Word Counter →</a>
+        <a href="{{ site.baseurl }}/tools/word-counter/" class="category-tool-btn">Get Real-Time Word Counts</a>
       </div>
     </article>
 
@@ -168,7 +175,7 @@ faqs:
         </div>
       </div>
       <div class="category-tool-footer">
-        <a href="{{ site.baseurl }}/tools/character-counter/" class="category-tool-btn">Try Character Counter →</a>
+        <a href="{{ site.baseurl }}/tools/character-counter/" class="category-tool-btn">Count Characters Instantly</a>
       </div>
     </article>
 
@@ -188,7 +195,7 @@ faqs:
       <h3 class="category-benefit-title">Real-Time Analysis</h3>
       <p class="category-benefit-desc">Get instant feedback as you type with live statistics. No delays, no processing — everything happens in real-time.</p>
       <ul class="category-benefit-list">
-        <li>Instant word & character counts</li>
+        <li>Instant <a href="{{ site.baseurl }}/tools/word-counter/" style="color: inherit; text-decoration: underline;">word & character counts</a></li>
         <li>Live reading time estimates</li>
         <li>Real-time text preview</li>
       </ul>
@@ -197,7 +204,7 @@ faqs:
     <div class="category-benefit-card">
       <div class="category-benefit-icon">📋</div>
       <h3 class="category-benefit-title">Unlimited Storage</h3>
-      <p class="category-benefit-desc">Store unlimited clipboard items with smart organization and categorization for easy retrieval.</p>
+      <p class="category-benefit-desc">Store unlimited <a href="{{ site.baseurl }}/tools/free-clipboard/" style="color: inherit; text-decoration: underline;">clipboard items</a> with smart organization and categorization for easy retrieval.</p>
       <ul class="category-benefit-list">
         <li>No storage limits</li>
         <li>Smart search & filtering</li>
@@ -280,7 +287,6 @@ faqs:
 </section>
 
 <!-- Use Cases Section -->
-<section class="category-usecases-section">
   <div class="category-section-header">
     <h2>💼 Perfect For</h2>
     <p>Who benefits from our clipboard tools?</p>
@@ -418,6 +424,8 @@ faqs:
   </div>
 </section>
 
+</main>
+
 <!-- Schema: CollectionPage -->
 <script type="application/ld+json">
 {
@@ -465,6 +473,71 @@ faqs:
         "position": 6,
         "name": "Character Counter",
         "url": "{{ '/tools/character-counter/' | absolute_url }}"
+      }
+    ]
+  }
+}
+</script>
+
+<!-- Schema: ItemPage with Tool Details for Search Enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemPage",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Free Online Clipboard & Text Tools",
+    "description": "Collection of 6 free, browser-based tools for clipboard management, text analysis, and word counting.",
+    "numberOfItems": 6,
+    "url": "{{ page.url | absolute_url }}",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Clipboard Manager",
+        "description": "Manage clipboard history with search, categories, and favorites. Store unlimited items privately in your browser.",
+        "url": "{{ '/tools/free-clipboard/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/clipboard-manager.png' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Online Notepad",
+        "description": "Free browser notepad with auto-save. Multiple tabs, dark mode, word count, and download as .txt. No signup needed.",
+        "url": "{{ '/tools/online-notepad/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/online-notepad.png' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Scratch Pad",
+        "description": "Ultra-minimal scratch pad. Open and start typing instantly. Zero friction, distraction-free, auto-saves every second.",
+        "url": "{{ '/tools/scratch-pad/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/scratch-pad.png' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Share Clipboard",
+        "description": "Share any text via link or QR code. No signup, no server storage. Works cross-device instantly.",
+        "url": "{{ '/tools/clipboard-share/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/share-clipboard.png' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Word Counter",
+        "description": "Count words, sentences, paragraphs, and estimate reading time. Industry-standard counting like Microsoft Word.",
+        "url": "{{ '/tools/word-counter/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/word-counter.png' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Character Counter",
+        "description": "Break down text into letters, numbers, spaces, and special characters. Perfect for social media limits.",
+        "url": "{{ '/tools/character-counter/' | absolute_url }}",
+        "image": "{{ '/assets/images/tools/character-counter.png' | absolute_url }}"
       }
     ]
   }
