@@ -6,48 +6,32 @@ Usage: {% include schema-breadcrumb.html %}
 {% assign breadcrumb_items = "" | split: "" %}
 
 {% comment %} Always start with Home {% endcomment %}
-{% assign home_item = '{"position":1,"name":"Home","item":"' | append: site.url | append: '/"}' %}
-{% assign breadcrumb_items = breadcrumb_items | push: home_item %}
+{% assign home_url = site.url | default: 'https://freeclipboard.com' %}
+{% assign breadcrumb_items = breadcrumb_items | push: "home" %}
 
 {% comment %} Determine page type and build breadcrumb {% endcomment %}
 {% if page.url contains '/tools/' %}
   {% comment %} Tool page - add category then tool {% endcomment %}
-  {% assign cat_name = page.category_name | default: "Tools" %}
-  {% assign cat_url = page.category_url | default: "/all-tools/" %}
-  {% assign cat_item = '{"position":2,"name":"' | append: cat_name | append: '","item":"' | append: site.url | append: cat_url | append: '"}' %}
-  {% assign breadcrumb_items = breadcrumb_items | push: cat_item %}
-  
-  {% assign tool_name = page.title | split: ' - ' | first | split: ' | ' | first %}
-  {% assign tool_item = '{"position":3,"name":"' | append: tool_name | append: '","item":"' | append: site.url | append: page.url | replace: 'index.html', '' | append: '"}' %}
-  {% assign breadcrumb_items = breadcrumb_items | push: tool_item %}
+  {% assign breadcrumb_items = breadcrumb_items | push: "category" %}
+  {% assign breadcrumb_items = breadcrumb_items | push: "tool" %}
 
 {% elsif page.url contains '/blog/' or page.layout == 'post' %}
   {% comment %} Blog post {% endcomment %}
-  {% assign blog_item = '{"position":2,"name":"Blog","item":"' | append: site.url | append: '/blog/"}' %}
-  {% assign breadcrumb_items = breadcrumb_items | push: blog_item %}
-  
+  {% assign breadcrumb_items = breadcrumb_items | push: "blog" %}
   {% if page.title %}
-    {% assign post_title = page.title | replace: '"', '\"' %}
-    {% assign post_item = '{"position":3,"name":"' | append: post_title | append: '","item":"' | append: site.url | append: page.url | append: '"}' %}
-    {% assign breadcrumb_items = breadcrumb_items | push: post_item %}
+    {% assign breadcrumb_items = breadcrumb_items | push: "post" %}
   {% endif %}
 
 {% elsif page.url contains '/free-resources/' %}
   {% comment %} Free resources page {% endcomment %}
-  {% assign resources_item = '{"position":2,"name":"Free Resources","item":"' | append: site.url | append: '/free-resources/"}' %}
-  {% assign breadcrumb_items = breadcrumb_items | push: resources_item %}
-  
+  {% assign breadcrumb_items = breadcrumb_items | push: "resources" %}
   {% if page.url != '/free-resources/' and page.title %}
-    {% assign resource_title = page.title | replace: '"', '\"' %}
-    {% assign resource_item = '{"position":3,"name":"' | append: resource_title | append: '","item":"' | append: site.url | append: page.url | append: '"}' %}
-    {% assign breadcrumb_items = breadcrumb_items | push: resource_item %}
+    {% assign breadcrumb_items = breadcrumb_items | push: "resource" %}
   {% endif %}
 
 {% elsif page.url != '/' and page.title %}
   {% comment %} Other pages {% endcomment %}
-  {% assign page_title = page.title | split: ' - ' | first | replace: '"', '\"' %}
-  {% assign page_item = '{"position":2,"name":"' | append: page_title | append: '","item":"' | append: site.url | append: page.url | replace: 'index.html', '' | append: '"}' %}
-  {% assign breadcrumb_items = breadcrumb_items | push: page_item %}
+  {% assign breadcrumb_items = breadcrumb_items | push: "page" %}
 {% endif %}
 
 {% if breadcrumb_items.size > 1 %}
@@ -56,12 +40,63 @@ Usage: {% include schema-breadcrumb.html %}
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {% for item in breadcrumb_items %}
     {
       "@type": "ListItem",
-      {{ item }}
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+      "position": 1,
+      "name": "Home",
+      "item": "{{ home_url }}"
+    }
+    {% if page.url contains '/tools/' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.category_name | default: 'Tools' }}",
+      "item": "{{ site.url | default: 'https://freeclipboard.com' }}{{ page.category_url | default: '/all-tools/' }}"
+    }
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | split: ' - ' | first | split: ' | ' | first }}",
+      "item": "{{ page.url | absolute_url | replace: '/index.html', '' }}"
+    }
+    {% elsif page.url contains '/blog/' or page.layout == 'post' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ site.url | default: 'https://freeclipboard.com' }}/blog/"
+    }
+    {% if page.title %}
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
+    {% endif %}
+    {% elsif page.url contains '/free-resources/' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Free Resources",
+      "item": "{{ site.url | default: 'https://freeclipboard.com' }}/free-resources/"
+    }
+    {% if page.url != '/free-resources/' and page.title %}
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
+    {% endif %}
+    {% elsif page.url != '/' and page.title %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | split: ' - ' | first }}",
+      "item": "{{ page.url | absolute_url | replace: '/index.html', '' }}"
+    }
+    {% endif %}
   ]
 }
 </script>
