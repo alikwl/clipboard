@@ -135,7 +135,9 @@ This avoids duplicate rating signals that can trigger Search Console review warn
 </script>
 
 {% comment %} Dynamic FAQ Schema based on tool type {% endcomment %}
-{% if page.faqs %}
+{% if page.generate_faq_schema == false %}
+{% comment %} FAQ schema disabled - using custom inline schema {% endcomment %}
+{% elsif page.faqs %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
