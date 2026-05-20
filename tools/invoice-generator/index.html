@@ -482,8 +482,8 @@ rating: 4.9
             });
         });
 
-        function addLineItem(description = '', quantity = 1, rate = 0) {
-            const item = InvoiceGenerator.addItem(description, quantity, rate);
+        function addLineItem(description = '', quantity = 1, rate = 0, existingItem = null) {
+            const item = existingItem || InvoiceGenerator.addItem(description, quantity, rate);
 
             const row = document.createElement('tr');
             row.dataset.itemId = item.id;
@@ -575,7 +575,7 @@ rating: 4.9
 
             // Load items
             data.items.forEach(item => {
-                addLineItem(item.description, item.quantity, item.rate);
+                addLineItem(item.description, item.quantity, item.rate, item);
             });
         }
 

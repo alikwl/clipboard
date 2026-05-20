@@ -40,6 +40,20 @@ const i18n = {
             'footer.copyright': '© 2024 Free-Clipboard. All rights reserved.',
             'footer.privacy': 'Privacy Policy',
             'footer.terms': 'Terms of Service',
+
+            // Language selector
+            'lang.select': 'Select Language',
+            'lang.english': 'English',
+            'lang.spanish': 'Spanish',
+            'lang.french': 'French',
+            'lang.german': 'German',
+            'lang.arabic': 'Arabic',
+        },
+
+        es: {
+            // Navigation
+            'nav.home': 'Inicio',
+            'nav.tools': 'Herramientas',
             'nav.blog': 'Blog',
             'nav.about': 'Acerca de',
             'nav.contact': 'Contacto',

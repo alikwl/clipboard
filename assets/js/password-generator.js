@@ -766,18 +766,21 @@ function generateBulk() {
   }
 
   const passwords = [];
-  const currentPassword = passwordOutput.textContent;
 
   for (let i = 0; i < count; i++) {
-    generatePassword();
-    passwords.push(passwordOutput.textContent);
+    let password = '';
+    if (currentType === 'random') {
+      password = generateRandomPassword();
+    } else if (currentType === 'pronounceable') {
+      password = generatePronounceablePassword();
+    } else if (currentType === 'passphrase') {
+      password = generatePassphrase();
+    }
+    passwords.push(password);
   }
 
   document.getElementById('bulkOutput').value = passwords.join('\n');
   bulkCountDisplay.textContent = `${count} password${count > 1 ? 's' : ''} generated`;
-
-  // Restore original password
-  passwordOutput.textContent = currentPassword;
 }
 
 // Copy bulk passwords

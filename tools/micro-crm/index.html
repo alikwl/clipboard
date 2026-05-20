@@ -570,7 +570,7 @@ rating: 4.8
             const deadline = document.getElementById('project-deadline').value;
 
             if (editingProjectId) {
-                MicroCRM.updateProject(editingProjectId, { name, description, status, budget, deadline });
+                MicroCRM.updateProject(editingProjectId, { clientId, name, description, status, budget, deadline });
             } else {
                 MicroCRM.createProject(clientId, name, description, status, budget, deadline);
             }
