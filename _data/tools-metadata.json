@@ -1018,8 +1018,34 @@
       "url": "/tools/youtube-title-generator/",
       "rating": 4.9,
       "usageCount": 0
+    },
+    {
+      "id": "nolimitgpt",
+      "name": "NoLimitGPT",
+      "slug": "nolimitgpt",
+      "description": "Access NoLimitGPT for free! No boundaries, no limits, and no login required. Experience instant, unrestricted AI chat on FreeClipboard.com now.",
+      "shortDescription": "Instant unrestricted AI chat with no boundaries",
+      "category": "ai",
+      "keywords": [
+        "NoLimitGPT",
+        "unrestricted AI",
+        "free AI no login",
+        "AI without boundaries",
+        "free chatbot no signup",
+        "jailbreak GPT free",
+        "no limit AI chat",
+        "instant free AI tool",
+        "anonymous AI chatbot",
+        "FreeClipboard AI tools"
+      ],
+      "icon": "🔓",
+      "featured": true,
+      "popular": true,
+      "new": true,
+      "url": "/tools/nolimitgpt/",
+      "rating": 4.9,
+      "usageCount": 0
     }
-
   ],
   "categories": [
     {

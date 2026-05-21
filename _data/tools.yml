@@ -173,3 +173,11 @@
 - name: Micro CRM
   url: /tools/micro-crm/
   description: Simple CRM for freelancers. Manage clients, track projects, and organize your business privately.
+
+- name: AI YouTube Title & Hook Generator
+  url: /tools/youtube-title-generator/
+  description: Instantly generate viral YouTube titles and scroll-stopping video hooks using AI.
+
+- name: NoLimitGPT
+  url: /tools/nolimitgpt/
+  description: Access NoLimitGPT for free! Unrestricted AI chat with no boundaries, no limits, and no login required.

@@ -53,7 +53,7 @@
       "pillar": "/ai-tools/",
       "icon": "🤖",
       "description": "AI-powered YouTube title, hook, and content creation tools",
-      "tools": ["youtube-title-generator"],
+      "tools": ["youtube-title-generator", "nolimitgpt"],
       "related_clusters": ["text-processing", "clipboard-tools"]
     }
   },
@@ -69,6 +69,7 @@
     "text-formatter": ["text formatter", "format text online", "case converter", "text transformation tool", "free text formatting"],
     "hash-generator": ["hash generator", "generate MD5 hash", "SHA-256 hash tool", "free hash calculator", "hash generator online"],
     "color-picker": ["color picker", "pick colors online", "HEX to RGB converter", "color conversion tool", "free color picker"],
-    "youtube-title-generator": ["YouTube title generator", "free YouTube title creator", "AI YouTube hook generator", "viral video hook writer", "high CTR title generator"]
+    "youtube-title-generator": ["YouTube title generator", "free YouTube title creator", "AI YouTube hook generator", "viral video hook writer", "high CTR title generator"],
+    "nolimitgpt": ["NoLimitGPT", "unrestricted AI chat", "free AI no login", "AI without boundaries", "no limit AI chatbot"]
   }
 }
