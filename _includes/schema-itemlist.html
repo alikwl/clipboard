@@ -27,13 +27,6 @@ Usage: {% include schema-itemlist.html items=tools list_name="Tools" %}
           "price": "0",
           "priceCurrency": "USD"
         }
-        {% if item.rating %},
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "{{ item.rating }}",
-          "ratingCount": "{{ item.usageCount | default: 500 }}"
-        }
-        {% endif %}
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
