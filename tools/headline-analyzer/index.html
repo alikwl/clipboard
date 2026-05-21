@@ -1,18 +1,28 @@
 ---
 layout: tool
-title: "Blog Headline Analyzer - Free SEO Title Checker"
-description: "Analyze your blog headlines for SEO, readability, and engagement. Get instant feedback on power words, sentiment, and optimal length."
-keywords: headline analyzer, SEO title checker, blog title analyzer, headline score, power words, content marketing
+title: "Free SEO Headline Analyzer: Write Catchy, High-CTR Titles"
+description: "Analyze your headlines and SEO title tags for free. Get an instant readability score, word balance analysis, sentiment check, and live Google SERP preview."
+keywords: headline analyzer, seo title checker, title tag tester, clickability score
 schema_type: WebApplication
 permalink: /tools/headline-analyzer/
 category_name: Business Tools
 category_url: /business-tools/
 rating: 4.7
+generate_faq_schema: false
+faqs:
+  - question: "What is a headline analyzer?"
+    answer: "A headline analyzer is an SEO tool that evaluates the effectiveness of a title based on length, word balance, sentiment, and visual search engine formatting."
+  - question: "What is a good headline score?"
+    answer: "A good headline score is 70 or higher. Scores in this range feature a healthy mix of power words, emotional triggers, and optimal character lengths."
+  - question: "How long should an SEO title tag be?"
+    answer: "An SEO title tag should be between 50 and 60 characters, or under 600 pixels, to prevent search engines from truncating the text in search results."
+  - question: "Do numbers improve headline performance?"
+    answer: "Yes, incorporating numbers into headlines can increase CTR by up to 36% because they provide clear structure and concrete data points for readers."
 ---
 
 <div class="tool-container">
     <div class="tool-header">
-        <h1 data-i18n="tool.headline.title">Blog Headline Analyzer</h1>
+        <h1 data-i18n="tool.headline.title">Free SEO Headline Analyzer &amp; Title Checker</h1>
         <p class="tool-description" data-i18n="tool.headline.description">
             Analyze your headlines for SEO effectiveness, emotional impact, and readability. Get actionable feedback to
             improve click-through rates.
@@ -94,6 +104,46 @@ rating: 4.7
             </div>
         </div>
 
+        <!-- Live Google SERP Preview Section -->
+        <div class="serp-preview-card card">
+            <div class="serp-preview-header">
+                <h2>Real-Time Google SERP Preview</h2>
+                <div class="serp-view-toggle">
+                    <button type="button" class="toggle-btn active" id="toggle-desktop">Desktop</button>
+                    <button type="button" class="toggle-btn" id="toggle-mobile">Mobile</button>
+                </div>
+            </div>
+            
+            <div class="serp-preview-container">
+                <!-- Desktop Preview -->
+                <div class="serp-preview-box desktop" id="desktop-preview-box">
+                    <div class="serp-google-url">
+                        https://freeclipboard.com <span class="serp-chevron">›</span> tools <span class="serp-chevron">›</span> headline-analyzer
+                    </div>
+                    <a href="#" class="serp-google-title" id="desktop-serp-title">Free SEO Headline Analyzer: Write Catchy, High-CTR Titles</a>
+                    <p class="serp-google-desc" id="desktop-serp-desc">Analyze your headlines and SEO title tags for free. Get an instant readability score, word balance analysis, sentiment check, and live Google SERP preview.</p>
+                </div>
+
+                <!-- Mobile Preview -->
+                <div class="serp-preview-box mobile" id="mobile-preview-box" style="display: none;">
+                    <div class="serp-mobile-site-header">
+                        <span class="serp-mobile-favicon">📋</span>
+                        <div class="serp-mobile-site-name-container">
+                            <span class="serp-mobile-site-name">FreeClipboard</span>
+                            <span class="serp-mobile-site-url">https://freeclipboard.com/tools/headline-analyzer</span>
+                        </div>
+                    </div>
+                    <a href="#" class="serp-google-title" id="mobile-serp-title">Free SEO Headline Analyzer: Write Catchy, High-CTR Titles</a>
+                    <p class="serp-google-desc" id="mobile-serp-desc">Analyze your headlines and SEO title tags for free. Get an instant readability score, word balance analysis, sentiment check, and live Google SERP preview.</p>
+                </div>
+            </div>
+            <div class="serp-preview-meta">
+                <span class="char-warning-badge" id="serp-char-warning" style="display: none;">⚠️ Exceeds optimal length (60 characters). Will be truncated in Google search results.</span>
+                <span class="char-perfect-badge" id="serp-char-perfect">✓ Perfect title length! (50-60 characters)</span>
+                <span class="char-short-badge" id="serp-char-short" style="display: none;">ℹ️ A bit short. Try adding power words or emotional triggers to boost CTR.</span>
+            </div>
+        </div>
+
         <!-- Examples Section -->
         <div class="examples-section card">
             <h3 data-i18n="tool.headline.examples_title">Example Headlines to Try</h3>
@@ -110,6 +160,80 @@ rating: 4.7
                 <button class="example-btn" data-example="Why Your Marketing Strategy Is Failing">
                     Why Your Marketing Strategy Is Failing
                 </button>
+            </div>
+        </div>
+
+        <!-- How Our Headline Analyzer Works Section -->
+        <div class="how-it-works-card card">
+            <h2>How Our Headline Analyzer Works</h2>
+            <p class="section-subtitle">Writing catchy titles is both an art and a science. Our algorithm evaluates your headlines based on four essential pillars of search performance and reader psychology:</p>
+            
+            <div class="features-grid-custom">
+                <div class="feature-item-custom">
+                    <div class="feature-icon-wrapper length">📏</div>
+                    <h3>Length Check</h3>
+                    <p>Flags titles that are too short to attract attention or too long, avoiding risky search engine result truncation (recommending 50-60 characters or under 600 pixels).</p>
+                </div>
+                <div class="feature-item-custom">
+                    <div class="feature-icon-wrapper balance">⚖️</div>
+                    <h3>Word Balance</h3>
+                    <p>Scans your copy for a strategic blend of common, uncommon, emotional, and power words ("ultimate", "proven", "secret") to capture click intent.</p>
+                </div>
+                <div class="feature-item-custom">
+                    <div class="feature-icon-wrapper sentiment">🎭</div>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Categorizes the emotional tone of your title as positive, negative, or neutral. Headlines with clear sentiment consistently score higher CTRs.</p>
+                </div>
+                <div class="feature-item-custom">
+                    <div class="feature-icon-wrapper intent">🎯</div>
+                    <h3>Search Intent</h3>
+                    <p>Validates your title structure against top-ranking SERP patterns (lists, questions, guides) to guarantee search relevance and alignment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Headline Scoring vs. Competitor Benchmarks Table -->
+        <div class="benchmarks-card card">
+            <h2>Headline Scoring vs. Competitor Benchmarks</h2>
+            <p class="section-subtitle">Use these proven scoring thresholds to measure your headline quality against industry competitor benchmarks and maximize your search visibility.</p>
+            
+            <div class="table-responsive-custom">
+                <table class="benchmarks-table">
+                    <thead>
+                        <tr>
+                            <th>Score Range</th>
+                            <th>Headline Quality</th>
+                            <th>Action Required</th>
+                            <th>Expected CTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="score-row-poor">
+                            <td><span class="score-badge poor">Below 40</span></td>
+                            <td><strong class="quality-label poor">Poor</strong></td>
+                            <td>Total rewrite; missing keywords, power words, and emotional hooks.</td>
+                            <td><span class="ctr-badge poor">Very Low (&lt; 1%)</span></td>
+                        </tr>
+                        <tr class="score-row-average">
+                            <td><span class="score-badge average">40 - 69</span></td>
+                            <td><strong class="quality-label average">Average</strong></td>
+                            <td>Add strong emotional modifiers or power words; adjust character lengths.</td>
+                            <td><span class="ctr-badge average">Moderate (1% - 3%)</span></td>
+                        </tr>
+                        <tr class="score-row-good">
+                            <td><span class="score-badge good">70 - 89</span></td>
+                            <td><strong class="quality-label good">Good</strong></td>
+                            <td>Solid balance and composition; check focus keyword front-loading.</td>
+                            <td><span class="ctr-badge good">High (3% - 7%)</span></td>
+                        </tr>
+                        <tr class="score-row-exceptional">
+                            <td><span class="score-badge exceptional">90 - 100</span></td>
+                            <td><strong class="quality-label exceptional">Exceptional</strong></td>
+                            <td>Perfect search engine optimization; highly clickable, clear, and compelling.</td>
+                            <td><span class="ctr-badge exceptional">Very High (&gt; 7%)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -344,6 +468,309 @@ rating: 4.7
         margin-bottom: 0.75rem;
         line-height: 1.6;
     }
+
+    /* ── Live SERP Preview Styles ────────────────────── */
+    .serp-preview-card {
+        margin-top: 2rem;
+        padding: 2rem;
+    }
+
+    .serp-preview-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .serp-preview-header h2 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--text-color, #fff);
+    }
+
+    .serp-view-toggle {
+        display: flex;
+        background: var(--surface-color, #2a2a2a);
+        padding: 0.25rem;
+        border-radius: 20px;
+        border: 1px solid var(--border-color, #444);
+    }
+
+    .toggle-btn {
+        background: transparent;
+        border: none;
+        padding: 0.35rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-secondary, #94a3b8);
+        cursor: pointer;
+        border-radius: 15px;
+        transition: all 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+        color: var(--text-color, #fff);
+    }
+
+    .toggle-btn.active {
+        background: var(--primary-color, #6366f1);
+        color: #ffffff !important;
+    }
+
+    .serp-preview-container {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        min-height: 120px;
+        color: #202124;
+        font-family: Arial, sans-serif;
+    }
+
+    .serp-preview-box.desktop {
+        text-align: left;
+    }
+
+    .serp-google-url {
+        font-size: 14px;
+        line-height: 1.3;
+        color: #202124;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .serp-chevron {
+        color: #70757a;
+        font-size: 10px;
+        margin: 0 2px;
+    }
+
+    .serp-google-title {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #1a0dab;
+        text-decoration: none;
+        margin-bottom: 4px;
+        font-weight: normal;
+    }
+
+    .serp-google-title:hover {
+        text-decoration: underline;
+    }
+
+    .serp-google-desc {
+        font-size: 14px;
+        line-height: 1.58;
+        color: #4d5156;
+        margin: 0;
+        word-wrap: break-word;
+    }
+
+    .serp-preview-box.mobile {
+        text-align: left;
+        max-width: 375px;
+        margin: 0 auto;
+        padding: 0.5rem;
+    }
+
+    .serp-mobile-site-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+
+    .serp-mobile-favicon {
+        font-size: 16px;
+        background: #f1f3f4;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    .serp-mobile-site-name-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .serp-mobile-site-name {
+        font-size: 12px;
+        font-weight: 500;
+        color: #202124;
+        line-height: 1.2;
+    }
+
+    .serp-mobile-site-url {
+        font-size: 11px;
+        color: #4d5156;
+        line-height: 1.2;
+    }
+
+    .serp-preview-box.mobile .serp-google-title {
+        font-size: 18px;
+        color: #15c;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .serp-preview-box.mobile .serp-google-desc {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .serp-preview-meta {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .char-warning-badge {
+        color: #f59e0b;
+        font-weight: 600;
+    }
+
+    .char-perfect-badge {
+        color: #10b981;
+        font-weight: 600;
+    }
+
+    .char-short-badge {
+        color: #3b82f6;
+        font-weight: 600;
+    }
+
+    /* ── How It Works & Benchmarks Table Styles ──────── */
+    .section-subtitle {
+        color: var(--text-secondary, #94a3b8);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 0.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .how-it-works-card h2, .benchmarks-card h2 {
+        margin-top: 0;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--text-color, #fff);
+    }
+
+    .features-grid-custom {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .feature-item-custom {
+        background: var(--surface-color, #2a2a2a);
+        border: 1px solid var(--border-color, #444);
+        padding: 1.5rem;
+        border-radius: 8px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .feature-item-custom:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-color, #6366f1);
+    }
+
+    .feature-icon-wrapper {
+        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .feature-icon-wrapper.length { background: rgba(59, 130, 246, 0.15); }
+    .feature-icon-wrapper.balance { background: rgba(16, 185, 129, 0.15); }
+    .feature-icon-wrapper.sentiment { background: rgba(245, 158, 11, 0.15); }
+    .feature-icon-wrapper.intent { background: rgba(139, 92, 246, 0.15); }
+
+    .feature-item-custom h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-color, #fff);
+    }
+
+    .feature-item-custom p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-secondary, #94a3b8);
+    }
+
+    .table-responsive-custom {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .benchmarks-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.95rem;
+    }
+
+    .benchmarks-table th, .benchmarks-table td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color, #444);
+    }
+
+    .benchmarks-table th {
+        background: var(--surface-color, #2a2a2a);
+        font-weight: 600;
+        color: var(--text-color, #fff);
+    }
+
+    .benchmarks-table tbody tr {
+        transition: background 0.15s ease;
+    }
+
+    .benchmarks-table tbody tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .score-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+    .score-badge.poor { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+    .score-badge.average { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+    .score-badge.good { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+    .score-badge.exceptional { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+
+    .quality-label.poor { color: #ef4444; }
+    .quality-label.average { color: #f59e0b; }
+    .quality-label.good { color: #3b82f6; }
+    .quality-label.exceptional { color: #10b981; }
+
+    .ctr-badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+    
+    .ctr-badge.poor { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    .ctr-badge.average { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .ctr-badge.good { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    .ctr-badge.exceptional { background: rgba(16, 185, 129, 0.1); color: #10b981; }
 </style>
 
 <script src="{{ site.baseurl }}/assets/js/headline-analyzer.js"></script>
@@ -433,8 +860,101 @@ rating: 4.7
                 typeDisplay.innerHTML = '<span class="tag-empty">Standard</span>';
             }
 
+            // Update SERP preview
+            updateSERPPreview();
+
             // Scroll to results
             resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+
+        // ── Real-Time Google SERP Preview Logic ──────────
+        const toggleDesktop = document.getElementById('toggle-desktop');
+        const toggleMobile = document.getElementById('toggle-mobile');
+        const desktopBox = document.getElementById('desktop-preview-box');
+        const mobileBox = document.getElementById('mobile-preview-box');
+        
+        const desktopTitle = document.getElementById('desktop-serp-title');
+        const mobileTitle = document.getElementById('mobile-serp-title');
+        
+        const badgeShort = document.getElementById('serp-char-short');
+        const badgePerfect = document.getElementById('serp-char-perfect');
+        const badgeWarning = document.getElementById('serp-char-warning');
+
+        // Toggle views
+        if (toggleDesktop && toggleMobile && desktopBox && mobileBox) {
+            toggleDesktop.addEventListener('click', function() {
+                toggleDesktop.classList.add('active');
+                toggleMobile.classList.remove('active');
+                desktopBox.style.display = 'block';
+                mobileBox.style.display = 'none';
+            });
+
+            toggleMobile.addEventListener('click', function() {
+                toggleMobile.classList.add('active');
+                toggleDesktop.classList.remove('active');
+                mobileBox.style.display = 'block';
+                desktopBox.style.display = 'none';
+            });
+        }
+
+        function updateSERPPreview() {
+            const val = input.value.trim();
+            const defaultText = "Free SEO Headline Analyzer: Write Catchy, High-CTR Titles";
+            const text = val || defaultText;
+            
+            // Visual truncation cutoff at 60 characters
+            let displayTitle = text;
+            if (text.length > 60) {
+                displayTitle = text.substring(0, 60) + '...';
+            }
+            
+            if (desktopTitle) desktopTitle.textContent = displayTitle;
+            if (mobileTitle) mobileTitle.textContent = displayTitle;
+            
+            // Show appropriate length badge
+            const len = text.length;
+            if (badgeShort && badgePerfect && badgeWarning) {
+                if (val.length === 0) {
+                    badgeShort.style.display = 'none';
+                    badgePerfect.style.display = 'inline';
+                    badgeWarning.style.display = 'none';
+                } else if (len < 40) {
+                    badgeShort.style.display = 'inline';
+                    badgePerfect.style.display = 'none';
+                    badgeWarning.style.display = 'none';
+                } else if (len <= 60) {
+                    badgeShort.style.display = 'none';
+                    badgePerfect.style.display = 'inline';
+                    badgeWarning.style.display = 'none';
+                } else {
+                    badgeShort.style.display = 'none';
+                    badgePerfect.style.display = 'none';
+                    badgeWarning.style.display = 'inline';
+                }
+            }
+        }
+
+        // Bind input event to update SERP preview in real-time
+        input.addEventListener('input', updateSERPPreview);
+        
+        // Run once on load to show default preview
+        updateSERPPreview();
     });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free SEO Headline Analyzer",
+  "url": "https://freeclipboard.com/tools/headline-analyzer/",
+  "applicationCategory": "SEO Tool",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
 </script>
