@@ -236,6 +236,75 @@ function generateOffline(topic, format, tone) {
   return { titles, hooks };
 }
 
+// Helper: Clean and convert any string format to list of items
+function parseStringToList(str) {
+  if (!str) return [];
+  
+  // If it's HTML, try to extract list items
+  if (str.includes('<li')) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = str;
+    const lis = tempDiv.getElementsByTagName('li');
+    if (lis.length > 0) {
+      return Array.from(lis).map(li => li.textContent.trim()).filter(Boolean);
+    }
+  }
+  
+  // Otherwise split by newline, strip numbering/bullets
+  return str.split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    // Strip leading bullets/numbers like "1. ", "- ", "* ", "1-", "• "
+    .map(line => line.replace(/^[\d\-\*\•\.\s]+[:\-\.\s]*/, '').trim())
+    .filter(line => line.length > 0);
+}
+
+// Helper: Parse a single text block containing both titles and hooks
+function parseSingleTextResponse(text) {
+  let titles = [];
+  let hooks = [];
+  
+  // Clean up carriage returns
+  const cleanText = text.replace(/\r/g, '');
+  const lines = cleanText.split('\n').map(l => l.trim()).filter(Boolean);
+  
+  let isTitleSection = true; // default starting section
+  
+  for (const line of lines) {
+    const lower = line.toLowerCase();
+    // Detect transition to hooks section
+    if (lower.includes('hook') && (lower.includes(':') || lower.includes('section') || lower.includes('viral') || lower.startsWith('hook'))) {
+      isTitleSection = false;
+      continue;
+    }
+    // Detect transition to titles section
+    if (lower.includes('title') && (lower.includes(':') || lower.includes('section') || lower.includes('viral') || lower.startsWith('title'))) {
+      isTitleSection = true;
+      continue;
+    }
+    
+    // Clean the item content
+    const cleaned = line.replace(/^[\d\-\*\•\.\s]+[:\-\.\s]*/, '').trim();
+    if (!cleaned) continue;
+    
+    if (isTitleSection) {
+      titles.push(cleaned);
+    } else {
+      hooks.push(cleaned);
+    }
+  }
+  
+  // Fallback: if one is empty, split evenly
+  if (titles.length === 0 || hooks.length === 0) {
+    const allItems = lines.map(line => line.replace(/^[\d\-\*\•\.\s]+[:\-\.\s]*/, '').trim()).filter(Boolean);
+    const mid = Math.ceil(allItems.length / 2);
+    titles = allItems.slice(0, mid);
+    hooks = allItems.slice(mid);
+  }
+  
+  return { titles, hooks };
+}
+
 // ── Render Copyable Cards ─────────────────────────────────────────────────────
 function renderCards(items, containerId) {
   const container = document.getElementById(containerId);
@@ -311,29 +380,95 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!response.ok) throw new Error('Network response failed');
 
-        const data = await response.json();
-
-        // 4. Update the UI with n8n response
-        // n8n should return { titles: [...], hooks: [...] } arrays OR HTML string
-        if (Array.isArray(data.titles) && Array.isArray(data.hooks)) {
-          renderCards(data.titles, 'titleOutput');
-          renderCards(data.hooks,  'hookOutput');
+        let data;
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          data = await response.json();
         } else {
-          // Raw HTML fallback for n8n HTML-string responses
-          titleContainer.innerHTML = data.titles || data.titlesHtml || 'No titles returned.';
-          hookContainer.innerHTML  = data.hooks  || data.hooksHtml  || 'No hooks returned.';
+          const text = await response.text();
+          try {
+            data = JSON.parse(text);
+          } catch (e) {
+            data = text; // raw string fallback
+          }
+        }
+
+        // Normalize array-based or object-based responses
+        const resultData = Array.isArray(data) ? data[0] : data;
+        let titles = [];
+        let hooks = [];
+
+        if (resultData) {
+          // If structure contains explicit titles/hooks arrays/strings
+          if (resultData.titles || resultData.hooks) {
+            if (Array.isArray(resultData.titles)) {
+              titles = resultData.titles;
+            } else if (typeof resultData.titles === 'string') {
+              titles = parseStringToList(resultData.titles);
+            }
+            
+            if (Array.isArray(resultData.hooks)) {
+              hooks = resultData.hooks;
+            } else if (typeof resultData.hooks === 'string') {
+              hooks = parseStringToList(resultData.hooks);
+            }
+          } else {
+            // Raw text response or generic text/output/message fields
+            const rawText = typeof resultData === 'string' 
+              ? resultData 
+              : (resultData.text || resultData.output || resultData.response || resultData.message || JSON.stringify(resultData));
+            const parsed = parseSingleTextResponse(rawText);
+            titles = parsed.titles;
+            hooks = parsed.hooks;
+          }
+        }
+
+        // Render cards
+        if (titles.length > 0 || hooks.length > 0) {
+          renderCards(titles, 'titleOutput');
+          renderCards(hooks,  'hookOutput');
+        } else {
+          // Unrecognized text display fallback
+          const displayText = typeof resultData === 'string' ? resultData : JSON.stringify(resultData);
+          titleContainer.innerHTML = `<div class="copyable-card-item"><p class="item-content-text">${displayText}</p></div>`;
+          hookContainer.innerHTML = `<div class="copyable-card-item"><p class="item-content-text">Results generated. Copy options directly above.</p></div>`;
         }
 
       } catch (error) {
-        console.error('Webhook error — switching to offline fallback:', error);
-        // 4b. Graceful offline fallback if webhook fails
-        const result = generateOffline(topic, format, tone);
-        renderCards(result.titles, 'titleOutput');
-        renderCards(result.hooks,  'hookOutput');
+        console.error('Webhook error:', error);
+        
+        // Show styled error message to user instead of silently showing random results
+        titleContainer.innerHTML = `
+          <div class="error-msg-box" style="padding: 1.25rem; color: #b91c1c; border: 1px solid #fee2e2; background: #fef2f2; border-radius: 0.75rem; text-align: left;">
+            <p style="font-weight: 700; margin-bottom: 0.25rem;">⚠️ AI Generation Failed</p>
+            <p style="font-size: 0.9rem; color: #7f1d1d; line-height: 1.4;">Could not fetch response from the n8n AI engine. This might be due to a temporary network issue or missing CORS settings.</p>
+            <p style="font-size: 0.8rem; color: #991b1b; margin-top: 0.5rem; font-family: monospace;">Details: ${error.message}</p>
+            <button id="fallbackBtn" class="btn-generate-custom" style="margin-top: 1rem; width: auto; font-size: 0.85rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+              Use Offline Fallback Instead
+            </button>
+          </div>
+        `;
+        
+        hookContainer.innerHTML = `
+          <div class="error-msg-box" style="padding: 1.25rem; color: #334155; border: 1px solid #e2e8f0; background: #f8fafc; border-radius: 0.75rem; text-align: left; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <p style="font-weight: 600; margin-bottom: 0.25rem; color: #475569;">💡 Tip for Host</p>
+            <p style="font-size: 0.85rem; color: #64748b; line-height: 1.45;">Ensure the n8n Webhook Node response is configured to return the generated titles and hooks, and the server allows cross-origin requests (CORS).</p>
+          </div>
+        `;
+
+        // Register action on manual fallback button
+        const fallbackBtn = document.getElementById('fallbackBtn');
+        if (fallbackBtn) {
+          fallbackBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const result = generateOffline(topic, format, tone);
+            renderCards(result.titles, 'titleOutput');
+            renderCards(result.hooks,  'hookOutput');
+          });
+        }
       }
     } else {
       // 3b. Offline-only path (no webhook configured)
-      // Small artificial delay to feel natural
       await new Promise(r => setTimeout(r, 800));
       const result = generateOffline(topic, format, tone);
       renderCards(result.titles, 'titleOutput');
