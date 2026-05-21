@@ -146,7 +146,7 @@ Supports: Search Engines, AI Assistants, Voice Search, Featured Snippets
 {% endif %}
 
 {% comment %} FAQ Schema if page has FAQs {% endcomment %}
-{% if page.faqs %}
+{% if page.faqs and page.layout != 'tool' %}
   {% include schema-faq.html faqs=page.faqs %}
 {% endif %}
 

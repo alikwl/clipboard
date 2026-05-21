@@ -8,8 +8,8 @@ Usage: {% include schema-howto.html name="How to..." description="..." steps=pag
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "{{ include.name | escape }}",
-  "description": "{{ include.description | escape }}",
+  "name": {{ include.name | jsonify }},
+  "description": {{ include.description | jsonify }},
   "totalTime": "{{ include.time | default: 'PT2M' }}",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -25,8 +25,8 @@ Usage: {% include schema-howto.html name="How to..." description="..." steps=pag
     {
       "@type": "HowToStep",
       "position": {{ forloop.index }},
-      "name": "{{ step.name | escape }}",
-      "text": "{{ step.text | escape }}",
+      "name": {{ step.name | jsonify }},
+      "text": {{ step.text | jsonify }},
       "url": "{{ site.url }}{{ page.url | replace: 'index.html', '' }}#step-{{ forloop.index }}"
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}

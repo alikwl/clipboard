@@ -37,7 +37,7 @@ Supports: WebApplication, SoftwareApplication, FAQPage, HowTo, Review
   "@id": "{{ tool_url }}#webapp",
   "name": "{{ tool_name }}",
   "alternateName": "{{ page.alt_name | default: tool_name }} - FreeClipboard",
-  "description": "{{ page.description | escape }}",
+  "description": {{ page.description | jsonify }},
   "url": "{{ tool_url }}",
   "applicationCategory": "{{ app_category }}",
   "applicationSubCategory": "{{ page.subcategory | default: 'Online Tool' }}",
@@ -48,7 +48,7 @@ Supports: WebApplication, SoftwareApplication, FAQPage, HowTo, Review
   "featureList": [
     {% if page.features %}
     {% for feature in page.features %}
-    "{{ feature | escape }}"{% unless forloop.last %},{% endunless %}
+    {{ feature | jsonify }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
     {% else %}
     "Free to use - no payment required",
@@ -111,8 +111,8 @@ This avoids duplicate rating signals that can trigger Search Console review warn
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": "{{ tool_url }}#webpage",
-  "name": "{{ page.title | escape }}",
-  "description": "{{ page.description | escape }}",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
   "url": "{{ tool_url }}",
   "isPartOf": {
     "@id": "{{ site.url }}/#website"
@@ -146,10 +146,10 @@ This avoids duplicate rating signals that can trigger Search Console review warn
     {% for faq in page.faqs %}
     {
       "@type": "Question",
-      "name": "{{ faq.question | escape }}",
+      "name": {{ faq.question | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ faq.answer | escape }}"
+        "text": {{ faq.answer | jsonify }}
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
@@ -206,8 +206,8 @@ This avoids duplicate rating signals that can trigger Search Console review warn
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "{{ page.howto_name | default: 'How to Use ' | append: tool_name }}",
-  "description": "{{ page.howto_description | default: page.description | escape }}",
+  "name": {{ page.howto_name | default: 'How to Use ' | append: tool_name | jsonify }},
+  "description": {{ page.howto_description | default: page.description | jsonify }},
   "totalTime": "{{ page.howto_time | default: 'PT2M' }}",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -223,8 +223,8 @@ This avoids duplicate rating signals that can trigger Search Console review warn
     {
       "@type": "HowToStep",
       "position": {{ forloop.index }},
-      "name": "{{ step.name | escape }}",
-      "text": "{{ step.text | escape }}",
+      "name": {{ step.name | jsonify }},
+      "text": {{ step.text | jsonify }},
       "url": "{{ tool_url }}#step-{{ forloop.index }}"
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
