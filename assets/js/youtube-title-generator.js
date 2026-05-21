@@ -240,14 +240,33 @@ function generateOffline(topic, format, tone) {
 function parseStringToList(str) {
   if (!str) return [];
   
-  // If it's HTML, try to extract list items
-  if (str.includes('<li')) {
+  // If it contains HTML tags, let's extract the text content from elements
+  if (str.includes('<') && str.includes('>')) {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = str;
-    const lis = tempDiv.getElementsByTagName('li');
-    if (lis.length > 0) {
-      return Array.from(lis).map(li => li.textContent.trim()).filter(Boolean);
+    
+    // Find all potential child elements
+    const elements = tempDiv.querySelectorAll('.output-item, div, li, p');
+    if (elements.length > 0) {
+      let items = [];
+      elements.forEach(el => {
+        const text = el.textContent.trim();
+        // Skip elements that only contain other elements to avoid duplicates
+        if (text && !el.querySelector('.output-item, div, li, p') && !items.includes(text)) {
+          items.push(text);
+        }
+      });
+      if (items.length > 0) {
+        return items.map(line => line.replace(/^[\d\-\*\•\.\s]+[:\-\.\s]*/, '').trim()).filter(Boolean);
+      }
     }
+    // Fallback: strip tags
+    const cleanText = tempDiv.textContent || tempDiv.innerText || '';
+    return cleanText.split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0)
+      .map(line => line.replace(/^[\d\-\*\•\.\s]+[:\-\.\s]*/, '').trim())
+      .filter(line => line.length > 0);
   }
   
   // Otherwise split by newline, strip numbering/bullets
@@ -346,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // webhook-powered AI generation. When set to the placeholder below, the tool
   // automatically falls back to the built-in client-side engine.
   const N8N_WEBHOOK_URL = 'https://n8ninstance.btech.cfd/webhook/youtube-title-generator';
-  const USE_WEBHOOK = N8N_WEBHOOK_URL !== 'https://your-n8n-instance.com';
+  const USE_WEBHOOK = N8N_WEBHOOK_URL && N8N_WEBHOOK_URL.includes('/webhook');
 
   generateBtn.addEventListener('click', async function (e) {
     e.preventDefault();
@@ -399,24 +418,45 @@ document.addEventListener('DOMContentLoaded', function () {
         let hooks = [];
 
         if (resultData) {
+          // Extract text from resultData recursively in case it's in response.text or content
+          let rawText = '';
+          if (typeof resultData === 'string') {
+            rawText = resultData;
+          } else if (resultData) {
+            if (resultData.response && typeof resultData.response === 'object') {
+              rawText = resultData.response.text || resultData.response.output || JSON.stringify(resultData.response);
+            } else {
+              rawText = resultData.content || resultData.text || resultData.output || resultData.response || resultData.message || JSON.stringify(resultData);
+            }
+          }
+
+          // Check if the extracted text itself is a JSON string
+          let parsedJson = null;
+          if (rawText && typeof rawText === 'string' && (rawText.trim().startsWith('{') || rawText.trim().startsWith('['))) {
+            try {
+              parsedJson = JSON.parse(rawText.trim());
+            } catch (e) {
+              // Not valid JSON
+            }
+          }
+
+          const targetObj = parsedJson || resultData;
+
           // If structure contains explicit titles/hooks arrays/strings
-          if (resultData.titles || resultData.hooks) {
-            if (Array.isArray(resultData.titles)) {
-              titles = resultData.titles;
-            } else if (typeof resultData.titles === 'string') {
-              titles = parseStringToList(resultData.titles);
+          if (targetObj && (targetObj.titles || targetObj.hooks)) {
+            if (Array.isArray(targetObj.titles)) {
+              titles = targetObj.titles;
+            } else if (typeof targetObj.titles === 'string') {
+              titles = parseStringToList(targetObj.titles);
             }
             
-            if (Array.isArray(resultData.hooks)) {
-              hooks = resultData.hooks;
-            } else if (typeof resultData.hooks === 'string') {
-              hooks = parseStringToList(resultData.hooks);
+            if (Array.isArray(targetObj.hooks)) {
+              hooks = targetObj.hooks;
+            } else if (typeof targetObj.hooks === 'string') {
+              hooks = parseStringToList(targetObj.hooks);
             }
           } else {
-            // Raw text response or generic text/output/message fields
-            const rawText = typeof resultData === 'string' 
-              ? resultData 
-              : (resultData.text || resultData.output || resultData.response || resultData.message || JSON.stringify(resultData));
+            // Parse raw text response
             const parsed = parseSingleTextResponse(rawText);
             titles = parsed.titles;
             hooks = parsed.hooks;
