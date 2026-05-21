@@ -995,7 +995,31 @@
       "url": "/tools/discord-spoiler-text-generator/",
       "rating": 4.7,
       "usageCount": 4000
+    },
+    {
+      "id": "youtube-title-generator",
+      "name": "AI YouTube Title & Hook Generator",
+      "slug": "youtube-title-generator",
+      "description": "Instantly generate viral YouTube titles and scroll-stopping video hooks using AI. Select your format and tone. 100% free, no registration required.",
+      "shortDescription": "Generate viral YouTube titles & hooks",
+      "category": "ai",
+      "keywords": [
+        "youtube title generator",
+        "youtube hook generator",
+        "ai youtube tools",
+        "high ctr titles",
+        "viral video hooks",
+        "free ai tools"
+      ],
+      "icon": "🚀",
+      "featured": true,
+      "popular": true,
+      "new": true,
+      "url": "/tools/youtube-title-generator/",
+      "rating": 4.9,
+      "usageCount": 0
     }
+
   ],
   "categories": [
     {
@@ -1053,6 +1077,13 @@
       "description": "Invoices, CRM, and business management tools",
       "icon": "💼",
       "url": "/business-tools/"
+    },
+    {
+      "id": "ai",
+      "name": "Free AI Tools",
+      "description": "AI-powered YouTube title, hook, and content creation tools",
+      "icon": "🤖",
+      "url": "/ai-tools/"
     }
   ]
 }

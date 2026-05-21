@@ -47,6 +47,14 @@
       "description": "Useful calculators for everyday needs and conversions",
       "tools": ["unit-converter", "cat-age-calculator", "holiday-countdown", "water-intake-calculator", "pizza-party-calculator", "energy-analyzer", "waste-tracker"],
       "related_clusters": ["security-tools"]
+    },
+    "ai-tools": {
+      "name": "Free AI Tools",
+      "pillar": "/ai-tools/",
+      "icon": "🤖",
+      "description": "AI-powered YouTube title, hook, and content creation tools",
+      "tools": ["youtube-title-generator"],
+      "related_clusters": ["text-processing", "clipboard-tools"]
     }
   },
   "anchor_variants": {
@@ -60,6 +68,7 @@
     "regex-tester": ["regex tester", "test regular expressions", "regex validator online", "regex pattern matcher", "regular expression tool"],
     "text-formatter": ["text formatter", "format text online", "case converter", "text transformation tool", "free text formatting"],
     "hash-generator": ["hash generator", "generate MD5 hash", "SHA-256 hash tool", "free hash calculator", "hash generator online"],
-    "color-picker": ["color picker", "pick colors online", "HEX to RGB converter", "color conversion tool", "free color picker"]
+    "color-picker": ["color picker", "pick colors online", "HEX to RGB converter", "color conversion tool", "free color picker"],
+    "youtube-title-generator": ["YouTube title generator", "free YouTube title creator", "AI YouTube hook generator", "viral video hook writer", "high CTR title generator"]
   }
 }
