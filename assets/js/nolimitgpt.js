@@ -20,7 +20,32 @@ document.addEventListener('DOMContentLoaded', function () {
   // Track raw response text to facilitate clean markdown/text copies
   let lastResponseText = '';
 
-  // 1. Textarea Character Count
+  // Inject cursor styling dynamically for premium typewriter effect
+  const cursorStyle = document.createElement('style');
+  cursorStyle.textContent = `
+    @keyframes blink { 50% { opacity: 0; } }
+    .typing-cursor {
+      font-weight: bold;
+      color: #a855f7;
+      animation: blink 0.8s step-end infinite;
+      margin-left: 2px;
+    }
+  `;
+  document.head.appendChild(cursorStyle);
+
+  // 1. CSP-compliant Suggestion Chips Event Handler
+  document.querySelectorAll('.suggest-chip').forEach(chip => {
+    chip.addEventListener('click', function () {
+      const promptVal = this.getAttribute('data-prompt');
+      if (promptVal) {
+        promptInput.value = promptVal;
+        promptInput.dispatchEvent(new Event('input')); // Update character counter
+        promptInput.focus();
+      }
+    });
+  });
+
+  // 2. Textarea Character Count
   promptInput.addEventListener('input', function () {
     const len = promptInput.value.length;
     charCount.textContent = `${len.toLocaleString()} character${len === 1 ? '' : 's'}`;
@@ -147,8 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Cache clean text for clipboard copy
       lastResponseText = outputText;
 
-      // Render Markdown output
-      responseOutput.innerHTML = formatOutput(outputText);
+      // Render Markdown output with typewriter streaming effect
+      const compiledHTML = formatOutput(outputText);
+      await streamHTML(responseOutput, compiledHTML);
 
     } catch (error) {
       console.error('Webhook error details:', error);
@@ -206,4 +232,49 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.removeChild(ta);
     });
   });
+
+  // Progressive streaming rendering helper (typewriter effect)
+  function streamHTML(element, htmlContent) {
+    let index = 0;
+    // Calculate a dynamic chunk size based on content length so long responses don't take forever
+    const chunkSize = Math.max(3, Math.floor(htmlContent.length / 120)); 
+    element.innerHTML = '';
+    
+    return new Promise((resolve) => {
+      const interval = setInterval(() => {
+        index += chunkSize;
+        if (index >= htmlContent.length) {
+          element.innerHTML = htmlContent;
+          clearInterval(interval);
+          resolve();
+        } else {
+          let currentSub = htmlContent.substring(0, index);
+          
+          // Prevent splitting HTML tags (e.g. <p> or <code class="...">)
+          const lastLessThan = currentSub.lastIndexOf('<');
+          const lastGreaterThan = currentSub.lastIndexOf('>');
+          if (lastLessThan > lastGreaterThan) {
+            const tagEnd = htmlContent.indexOf('>', lastLessThan);
+            if (tagEnd !== -1) {
+              index = tagEnd + 1;
+              currentSub = htmlContent.substring(0, index);
+            }
+          }
+          
+          // Prevent splitting HTML character entities (e.g. &amp;, &lt;)
+          const lastAmpersand = currentSub.lastIndexOf('&');
+          const lastSemicolon = currentSub.lastIndexOf(';');
+          if (lastAmpersand > lastSemicolon) {
+            const entityEnd = htmlContent.indexOf(';', lastAmpersand);
+            if (entityEnd !== -1) {
+              index = entityEnd + 1;
+              currentSub = htmlContent.substring(0, index);
+            }
+          }
+          
+          element.innerHTML = currentSub + '<span class="typing-cursor">|</span>';
+        }
+      }, 15);
+    });
+  }
 });

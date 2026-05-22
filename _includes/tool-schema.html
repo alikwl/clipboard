@@ -33,7 +33,7 @@ Supports: WebApplication, SoftwareApplication, FAQPage, HowTo, Review
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "{{ page.schema_type | default: 'WebApplication' }}",
   "@id": "{{ tool_url }}#webapp",
   "name": "{{ tool_name }}",
   "alternateName": "{{ page.alt_name | default: tool_name }} - FreeClipboard",
@@ -41,7 +41,7 @@ Supports: WebApplication, SoftwareApplication, FAQPage, HowTo, Review
   "url": "{{ tool_url }}",
   "applicationCategory": "{{ app_category }}",
   "applicationSubCategory": "{{ page.subcategory | default: 'Online Tool' }}",
-  "operatingSystem": "Any (Web Browser)",
+  "operatingSystem": "{{ page.operating_system | default: 'Any (Web Browser)' }}",
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "softwareVersion": "1.0",
   "screenshot": "{{ site.url }}/assets/images/tools/{{ page.slug | default: 'default' }}.png",
@@ -54,7 +54,7 @@ Supports: WebApplication, SoftwareApplication, FAQPage, HowTo, Review
     "Free to use - no payment required",
     "No signup or registration needed",
     "100% privacy-focused - data stays in browser",
-    "Works offline after first load",
+    {% unless page.offline == false %}"Works offline after first load",{% endunless %}
     "Mobile-friendly responsive design",
     "Instant results with no server delays"
     {% endif %}
