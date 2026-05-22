@@ -15,99 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const responseOutput  = document.getElementById('responseOutput');
   const copyBtn     = document.getElementById('copyBtn');
 
-  const settingsBtn = document.getElementById('settingsBtn');
-  const settingsModal = document.getElementById('settingsModal');
-  const closeSettingsBtn = document.getElementById('closeSettingsBtn');
-  const resetWebhookBtn = document.getElementById('resetWebhookBtn');
-  const saveSettingsBtn = document.getElementById('saveSettingsBtn');
-  const webhookUrlInput = document.getElementById('webhookUrlInput');
-
   if (!promptInput || !generateBtn) return;
 
-  // Webhook Configuration (Supports Custom Local/External n8n and Ollama URLs)
-  const DEFAULT_WEBHOOK_URL = 'https://n8ninstance.btech.cfd/webhook/nolimitgpt-without-boundaries';
-  let currentWebhookUrl = localStorage.getItem('nolimitgpt_webhook_url') || DEFAULT_WEBHOOK_URL;
-
-  // Initialize Modal Field
-  if (webhookUrlInput) {
-    webhookUrlInput.value = currentWebhookUrl;
-  }
-
-  // 0. Wire up Settings Modal Controls
-  if (settingsBtn && settingsModal) {
-    settingsBtn.addEventListener('click', function () {
-      if (webhookUrlInput) {
-        webhookUrlInput.value = currentWebhookUrl;
-      }
-      settingsModal.classList.add('show');
-    });
-  }
-
-  function closeModal() {
-    if (settingsModal) {
-      settingsModal.classList.remove('show');
-    }
-  }
-
-  if (closeSettingsBtn) {
-    closeSettingsBtn.addEventListener('click', closeModal);
-  }
-
-  if (settingsModal) {
-    settingsModal.addEventListener('click', function (e) {
-      if (e.target === settingsModal) {
-        closeModal();
-      }
-    });
-  }
-
-  if (resetWebhookBtn && webhookUrlInput) {
-    resetWebhookBtn.addEventListener('click', function () {
-      webhookUrlInput.value = DEFAULT_WEBHOOK_URL;
-    });
-  }
-
-  if (saveSettingsBtn && webhookUrlInput) {
-    saveSettingsBtn.addEventListener('click', function () {
-      const enteredUrl = webhookUrlInput.value.trim();
-      if (!enteredUrl) {
-        alert('Please enter a valid Webhook URL!');
-        return;
-      }
-      try {
-        new URL(enteredUrl);
-      } catch (err) {
-        alert('Please enter a valid URL (starting with http:// or https://)');
-        return;
-      }
-
-      currentWebhookUrl = enteredUrl;
-      localStorage.setItem('nolimitgpt_webhook_url', enteredUrl);
-
-      // Save success micro-interaction
-      const originalText = saveSettingsBtn.textContent;
-      saveSettingsBtn.textContent = 'Saved! ✓';
-      saveSettingsBtn.style.background = '#10b981';
-
-      setTimeout(() => {
-        saveSettingsBtn.textContent = originalText;
-        saveSettingsBtn.style.background = '';
-        closeModal();
-      }, 800);
-    });
-  }
-
-  // Handle click on troubleshoot settings link inside responseOutput (CSP-compliant delegate)
-  if (responseOutput) {
-    responseOutput.addEventListener('click', function (e) {
-      if (e.target && (e.target.id === 'troubleshootSettingsLink' || e.target.closest('#troubleshootSettingsLink'))) {
-        e.preventDefault();
-        if (settingsBtn) {
-          settingsBtn.click();
-        }
-      }
-    });
-  }
+  const currentWebhookUrl = 'https://n8ninstance.btech.cfd/webhook/nolimitgpt-without-boundaries';
 
   // Track raw response text to facilitate clean markdown/text copies
   let lastResponseText = '';
@@ -200,21 +110,51 @@ document.addEventListener('DOMContentLoaded', function () {
     outputContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     try {
-      const response = await fetch(currentWebhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ query: queryText })
-      });
+      let response;
+      let rawText = '';
+      
+      // ── Self-healing Dual-Protocol Request Engine ──────────────────
+      // n8n Webhook nodes default to GET. We try GET first for immediate success,
+      // and fall back to POST in case the user has explicitly reconfigured it.
+      try {
+        console.log('[NoLimitGPT] Attempting GET request (n8n default)...');
+        const url = new URL(currentWebhookUrl);
+        url.searchParams.append('query', queryText);
+        
+        response = await fetch(url.toString(), {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`GET request failed with status: ${response.status}`);
+        }
+        
+        rawText = await response.text();
+        console.log('[NoLimitGPT] GET request succeeded!');
+      } catch (getErr) {
+        console.warn('[NoLimitGPT] GET request failed/blocked. Trying POST fallback...', getErr);
+        
+        response = await fetch(currentWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ query: queryText })
+        });
+
+        if (!response.ok) {
+          throw new Error(`POST request failed with status: ${response.status}`);
+        }
+        
+        rawText = await response.text();
+        console.log('[NoLimitGPT] POST request succeeded!');
       }
 
       let responseData;
-      const contentType = response.headers.get('content-type');
-      const rawText = await response.text();
       
       // Debug: Log raw response for troubleshooting
       console.log('[NoLimitGPT] Raw response:', rawText.substring(0, 500));
@@ -306,19 +246,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       const troubleshootFooter = `
         <details style="margin-top: 1.5rem; border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-          <summary style="font-size: 0.85rem; font-weight: 600; color: #64748b; cursor: pointer; user-select: none;">🛠️ Want live AI responses? View connection troubleshooting</summary>
+          <summary style="font-size: 0.85rem; font-weight: 600; color: #64748b; cursor: pointer; user-select: none;">🛠️ Backend Connection Troubleshooting</summary>
           <div style="margin-top: 0.75rem; padding: 1rem; background: #fefce8; border: 1px solid #fde68a; border-radius: 0.75rem; font-size: 0.825rem; color: #713f12; line-height: 1.6;">
             <p style="margin: 0 0 0.5rem 0; font-weight: 700; color: #854d0e;">⚠️ Connection to n8n AI Backend Failed</p>
+            <p style="margin: 0 0 0.5rem 0;">The frontend is hardcoded to connect to the production webhook at: <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">https://n8ninstance.btech.cfd/webhook/nolimitgpt-without-boundaries</code></p>
             <ul style="margin: 0; padding-left: 1.25rem;">
-              <li><strong>GitHub Pages Mixed Content Rule (HTTPS):</strong> Because your site is running securely via HTTPS (GitHub Pages), web browsers strictly block requests to insecure HTTP URLs (like <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">http://...</code>). Your n8n server URL <strong>must start with https://</strong>.</li>
-              <li><strong>Inactive Workflow (CORS Pitfall):</strong> If your workflow toggle in the top-right of your n8n editor is set to <strong>Inactive</strong>, n8n will return a generic 404 error without CORS headers. The browser blocks this and reports a generic <em>"Failed to fetch"</em> error. Ensure the workflow is set to <strong>Active</strong>!</li>
-              <li><strong>Testing / Live Webhooks:</strong>
-                <ul style="margin-top: 0.25rem; padding-left: 1rem;">
-                  <li>For testing (clicking <strong>Listen for test event</strong> in n8n): Set the URL in <span class="trouble-link" id="troubleshootSettingsLink" style="color: #7c3aed; text-decoration: underline; font-weight: 600; cursor: pointer;">⚙️ Settings</span> to contain <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">/webhook-test/</code>.</li>
-                  <li>For live (Active workflow): Set the URL in <span class="trouble-link" id="troubleshootSettingsLink" style="color: #7c3aed; text-decoration: underline; font-weight: 600; cursor: pointer;">⚙️ Settings</span> to contain <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">/webhook/</code>.</li>
-                </ul>
-              </li>
-              <li><strong>CORS Allowed Origins:</strong> In your n8n Webhook node parameters, expand <em>Options</em>, add <em>Allowed Origins</em>, and set it to <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">*</code>.</li>
+              <li><strong>Is the Workflow Active?</strong> In n8n, make sure the toggle switch in the top-right corner of your workflow is set to <strong>Active</strong>. If it is inactive, n8n will block requests with a CORS/404 error.</li>
+              <li><strong>CORS Allowed Origins:</strong> In your n8n Webhook node parameters, expand <em>Options</em>, add <em>Allowed Origins</em>, and ensure it is set to <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">*</code>.</li>
+              <li><strong>HTTPS SSL Certificate:</strong> Because this site is served securely via HTTPS (GitHub Pages), the browser blocks connection if the destination server does not have a valid SSL certificate. Ensure <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">https://n8ninstance.btech.cfd</code> has a working SSL cert.</li>
             </ul>
             <p style="margin: 0.75rem 0 0; font-size: 0.8rem; color: #92400e;"><strong>Detected Error:</strong> <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:0.2rem;">${error.message || error}</code></p>
           </div>

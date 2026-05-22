@@ -40,9 +40,6 @@ faqs:
             <div class="form-group-full">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
                     <label for="promptInput" class="form-label-custom" style="margin-bottom: 0;">Enter your prompt or question:</label>
-                    <button id="settingsBtn" class="btn-settings-toggle" type="button" title="Configure Webhook Endpoint">
-                        <span>⚙️ Settings</span>
-                    </button>
                 </div>
                 <div class="textarea-wrapper">
                     <textarea id="promptInput" class="form-textarea-custom" rows="4" 
@@ -231,29 +228,6 @@ faqs:
             <a href="{{ site.baseurl }}/ai-tools/" class="banner-cta-link-btn">
                 Explore Free AI Tools
             </a>
-        </div>
-    </div>
-
-    <!-- Settings Modal Overlay -->
-    <div id="settingsModal" class="nolimit-modal">
-        <div class="nolimit-modal-content">
-            <div class="nolimit-modal-header">
-                <h3 class="nolimit-modal-title">⚙️ NoLimitGPT API Settings</h3>
-                <button type="button" class="nolimit-modal-close" id="closeSettingsBtn">&times;</button>
-            </div>
-            <div class="nolimit-modal-body">
-                <p class="nolimit-modal-description">
-                    Customize your n8n or Ollama API Webhook URL. If the default endpoint is down, or you want to connect to a local development instance with zero server limits, enter it below.
-                </p>
-                <div class="nolimit-input-group">
-                    <label for="webhookUrlInput" class="nolimit-input-label">Webhook URL:</label>
-                    <input type="url" id="webhookUrlInput" class="nolimit-input-field" placeholder="https://..." value="https://n8ninstance.btech.cfd/webhook/nolimitgpt-without-boundaries">
-                </div>
-            </div>
-            <div class="nolimit-modal-footer">
-                <button type="button" class="btn-modal-secondary" id="resetWebhookBtn">Reset to Default</button>
-                <button type="button" class="btn-modal-primary" id="saveSettingsBtn">Save Settings</button>
-            </div>
         </div>
     </div>
 </div>
