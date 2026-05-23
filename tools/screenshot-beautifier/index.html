@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Screenshot Beautifier - Create Aesthetic Mockups</title>
+    <meta name="description"
+        content="Instantly add backgrounds, shadows, and rounded corners to your screenshots online. Free tool, no watermarks." />
+    <meta name="keywords"
+        content="screenshot beautifier, image mockup, gradient background, rounded corners, drop shadow, online image editor" />
+    <link rel="canonical" href="https://freeclipboard.com/tools/screenshot-beautifier/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 500: '#8b5cf6', 600: '#7c3aed' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Instant Screenshot Beautifier",
+        "applicationCategory": "Multimedia",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "A free online tool that lets you add gradient backgrounds, rounded corners, and drop-shadows to screenshots instantly.",
+        "url": "https://freeclipboard.com/tools/screenshot-beautifier/",
+        "author": { "@type": "Organization", "name": "FreeClipboard", "url": "https://freeclipboard.com" }
+    }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Sidebar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 3px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        input[type=range] {
+            height: 6px;
+            border-radius: 3px;
+            background: #334155;
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #a78bfa;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+        }
+
+        input[type=range]::-webkit-slider-thumb:hover {
+            background: #c4b5fd;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="w-full border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-pink-500 flex items-center justify-center text-white font-bold shadow-lg shadow-brand-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-white">Screenshot Beautifier</span>
+            </div>
+            <a href="https://freeclipboard.com"
+                class="text-sm font-medium text-slate-400 hover:text-white transition flex items-center gap-1">
+                More Tools <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-7xl mx-auto p-4 md:p-8 flex flex-col lg:flex-row gap-8">
+
+        <!-- Controls Sidebar -->
+        <aside
+            class="w-full lg:w-80 flex-shrink-0 lg:h-[calc(100vh-120px)] lg:sticky lg:top-24 overflow-y-auto custom-scroll pr-2 space-y-8">
+
+            <!-- Upload -->
+            <section>
+                <div id="dropZone"
+                    class="group relative border-2 border-dashed border-slate-700 bg-slate-900/50 rounded-2xl p-8 text-center cursor-pointer hover:border-brand-500 hover:bg-slate-800/80 transition-all duration-300">
+                    <input type="file" id="fileInput" accept="image/*" class="hidden" />
+                    <div class="pointer-events-none space-y-3">
+                        <div
+                            class="w-12 h-12 mx-auto bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-brand-400 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-200 font-semibold">Click to Upload Image</p>
+                            <p class="text-xs text-slate-500 mt-1">or Drag & Drop (PNG, JPG, WebP)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Canvas Size -->
+            <section class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-bold uppercase text-slate-500 tracking-wider">Canvas Size</h3>
+                    <span id="dimsLabel"
+                        class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded">1200 x 630</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="setPreset(1200, 630)"
+                        class="preset-btn active px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300 border-brand-500 text-white shadow-lg shadow-brand-500/10">Twitter</button>
+                    <button onclick="setPreset(1080, 1080)"
+                        class="preset-btn px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300">Insta
+                        Sq</button>
+                    <button onclick="setPreset(1080, 1350)"
+                        class="preset-btn px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300">Portrait</button>
+                    <button onclick="setPreset(1080, 1920)"
+                        class="preset-btn px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300">Stories</button>
+                    <button onclick="setPreset(1280, 720)"
+                        class="preset-btn px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300">YouTube</button>
+                    <button onclick="setPreset(1500, 500)"
+                        class="preset-btn px-2 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium border border-slate-700 hover:border-slate-600 transition text-slate-300">LinkedIn</button>
+                </div>
+            </section>
+
+            <!-- Background -->
+            <section class="space-y-4">
+                <h3 class="text-xs font-bold uppercase text-slate-500 tracking-wider">Background</h3>
+
+                <!-- Quick Gradients -->
+                <div class="flex gap-2 mb-3">
+                    <div onclick="setGradient('#f472b6', '#8b5cf6')"
+                        class="w-6 h-6 rounded-full cursor-pointer ring-2 ring-offset-2 ring-offset-slate-900 ring-transparent hover:ring-white transition"
+                        style="background: linear-gradient(135deg, #f472b6, #8b5cf6)"></div>
+                    <div onclick="setGradient('#3b82f6', '#10b981')"
+                        class="w-6 h-6 rounded-full cursor-pointer ring-2 ring-offset-2 ring-offset-slate-900 ring-transparent hover:ring-white transition"
+                        style="background: linear-gradient(135deg, #3b82f6, #10b981)"></div>
+                    <div onclick="setGradient('#f59e0b', '#ef4444')"
+                        class="w-6 h-6 rounded-full cursor-pointer ring-2 ring-offset-2 ring-offset-slate-900 ring-transparent hover:ring-white transition"
+                        style="background: linear-gradient(135deg, #f59e0b, #ef4444)"></div>
+                    <div onclick="setGradient('#0f172a', '#334155')"
+                        class="w-6 h-6 rounded-full cursor-pointer ring-2 ring-offset-2 ring-offset-slate-900 ring-transparent hover:ring-white transition"
+                        style="background: linear-gradient(135deg, #0f172a, #334155)"></div>
+                    <div onclick="setGradient('#ffffff', '#e2e8f0')"
+                        class="w-6 h-6 rounded-full cursor-pointer ring-2 ring-offset-2 ring-offset-slate-900 ring-transparent hover:ring-white transition"
+                        style="background: linear-gradient(135deg, #ffffff, #e2e8f0)"></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-800 p-2 rounded-lg border border-slate-700 flex items-center gap-2">
+                        <input type="color" id="color1" value="#0f172a"
+                            class="w-8 h-8 rounded cursor-pointer bg-transparent border-none p-0" />
+                        <span class="text-xs text-slate-400">Start</span>
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded-lg border border-slate-700 flex items-center gap-2">
+                        <input type="color" id="color2" value="#38bdf8"
+                            class="w-8 h-8 rounded cursor-pointer bg-transparent border-none p-0" />
+                        <span class="text-xs text-slate-400">End</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-[10px] text-slate-500 mb-2 block uppercase tracking-wider">Gradient
+                        Direction</label>
+                    <input type="range" id="bgAngle" min="0" max="360" value="135" class="w-full" />
+                </div>
+            </section>
+
+            <!-- Image Style -->
+            <section class="space-y-4">
+                <h3 class="text-xs font-bold uppercase text-slate-500 tracking-wider">Styling</h3>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <label class="text-xs text-slate-300">Padding</label>
+                        <span id="paddingVal" class="text-xs font-mono text-slate-500">60px</span>
+                    </div>
+                    <input type="range" id="paddingInput" min="0" max="200" value="60" class="w-full" />
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <label class="text-xs text-slate-300">Roundness</label>
+                        <span id="radiusVal" class="text-xs font-mono text-slate-500">20px</span>
+                    </div>
+                    <input type="range" id="radiusInput" min="0" max="100" value="20" class="w-full" />
+                </div>
+
+                <div class="flex items-center justify-between pt-2">
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                        <div class="relative">
+                            <input type="checkbox" id="shadowCheck" class="sr-only peer" checked />
+                            <div
+                                class="w-9 h-5 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-600">
+                            </div>
+                        </div>
+                        <span class="text-sm text-slate-300 group-hover:text-white transition">Drop Shadow</span>
+                    </label>
+                    <button id="resetBtn" class="text-xs text-rose-400 hover:text-rose-300 transition font-medium">Reset
+                        Default</button>
+                </div>
+            </section>
+
+            <!-- Text Overlay -->
+            <section class="space-y-4 pt-4 border-t border-slate-800">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-bold uppercase text-slate-500 tracking-wider">Text Overlay</h3>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" id="textCheck"
+                            class="w-4 h-4 rounded bg-slate-800 border-slate-600 text-brand-500 focus:ring-brand-500 focus:ring-offset-slate-900" />
+                        <span class="text-xs text-slate-400">Enable</span>
+                    </label>
+                </div>
+                <div id="textControls" class="space-y-3 opacity-50 pointer-events-none transition-all duration-200">
+                    <input type="text" id="overlayText" value="Your Caption Here"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-brand-500 focus:outline-none placeholder-slate-600 transition" />
+                    <div class="flex gap-2">
+                        <input type="color" id="textColor" value="#ffffff"
+                            class="w-10 h-10 rounded-lg border border-slate-700 bg-transparent cursor-pointer" />
+                        <div class="flex-1 flex flex-col justify-center">
+                            <label class="text-[10px] text-slate-500 mb-1">Font Size</label>
+                            <input type="range" id="textSize" min="10" max="200" value="40" class="w-full" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="text-[10px] text-slate-500 mb-1 block">Position X</label>
+                            <input type="range" id="textX" min="0" max="100" value="50" class="w-full" />
+                        </div>
+                        <div>
+                            <label class="text-[10px] text-slate-500 mb-1 block">Position Y</label>
+                            <input type="range" id="textY" min="0" max="100" value="50" class="w-full" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </aside>
+
+        <!-- Preview Area -->
+        <div class="flex-1 flex flex-col min-h-[500px]">
+
+            <!-- Toolbar -->
+            <div class="w-full flex justify-end gap-3 mb-6 sticky top-20 z-40 lg:static">
+                <button onclick="copyImage()"
+                    class="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-sm font-semibold transition border border-slate-700 hover:border-slate-500 backdrop-blur-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                        </path>
+                    </svg>
+                    Copy
+                </button>
+                <button onclick="downloadImage()"
+                    class="flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-sm font-semibold shadow-xl shadow-brand-900/30 transition transform hover:-translate-y-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download PNG
+                </button>
+            </div>
+
+            <!-- Canvas Wrapper -->
+            <div
+                class="flex-1 flex items-start justify-center bg-slate-900/50 border border-slate-800 rounded-3xl p-4 md:p-8 shadow-inner overflow-auto relative">
+                <!-- Canvas -->
+                <canvas id="canvas"
+                    class="max-w-full h-auto shadow-2xl rounded-sm transition-transform duration-300"></canvas>
+
+                <!-- Empty State Overlay -->
+                <div id="emptyState"
+                    class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none opacity-0 transition-opacity">
+                    <p class="text-slate-500 font-medium">Preview Area</p>
+                </div>
+            </div>
+
+            <!-- SEO FAQ -->
+            <div class="mt-12 border-t border-slate-800 pt-8">
+                <h2 class="text-xl font-bold mb-6 text-slate-200">Frequently Asked Questions</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900/30 p-5 rounded-2xl border border-slate-800/50">
+                        <h4 class="font-semibold text-slate-200 mb-2">How do I create a Twitter post image?</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Select the "Twitter" preset button. It
+                            automatically resizes the canvas to 1200x630px, ensuring your screenshot fits perfectly in
+                            the timeline.</p>
+                    </div>
+                    <div class="bg-slate-900/30 p-5 rounded-2xl border border-slate-800/50">
+                        <h4 class="font-semibold text-slate-200 mb-2">Is this safe to use?</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Yes! All processing happens locally in your
+                            browser. Your images are never uploaded to our servers, guaranteeing 100% privacy.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-800 bg-slate-900 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm mb-2">
+                &copy; <span id="year"></span> Screenshot Beautifier. All rights reserved.
+            </p>
+            <p class="text-slate-500 text-xs">
+                Developed by <a href="https://freeclipboard.com" target="_blank" rel="noopener noreferrer"
+                    class="text-brand-400 hover:text-brand-300 hover:underline font-medium transition-colors">FreeClipboard.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-2xl border border-slate-700 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-[100] font-medium">
+        <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <span id="toastMsg">Action Complete</span>
+    </div>
+
+    <script>
+        // --- State Management ---
+        const state = {
+            canvasW: 1200,
+            canvasH: 630,
+            color1: '#0f172a',
+            color2: '#38bdf8',
+            angle: 135,
+            padding: 60,
+            radius: 20,
+            shadow: true,
+            textEnabled: false,
+            text: 'Your Caption Here',
+            textSize: 40,
+            textColor: '#ffffff',
+            textX: 50,
+            textY: 50,
+            image: null
+        };
+
+        // --- Elements ---
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        // --- Initialization ---
+        function init() {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            bindEvents();
+
+            // Load a placeholder image to show functionality immediately
+            const placeholder = new Image();
+            placeholder.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgODAwIDYwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMxZTI5M2IiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NDc0OGIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRyb3AgSW1hZ2UgSGVyZTwvdGV4dD48L3N2Zz4=';
+            placeholder.onload = () => {
+                // Only use placeholder if no image uploaded
+                if (!state.image) {
+                    state.image = placeholder;
+                    updateCanvas();
+                }
+            };
+        }
+
+        // --- Event Binding ---
+        function bindEvents() {
+            const on = (id, event, fn) => document.getElementById(id)?.addEventListener(event, fn);
+
+            // Appearance
+            on('color1', 'input', e => { state.color1 = e.target.value; updateCanvas(); });
+            on('color2', 'input', e => { state.color2 = e.target.value; updateCanvas(); });
+            on('bgAngle', 'input', e => { state.angle = parseInt(e.target.value); updateCanvas(); });
+
+            // Layout
+            on('paddingInput', 'input', e => {
+                state.padding = parseInt(e.target.value);
+                document.getElementById('paddingVal').textContent = state.padding + 'px';
+                updateCanvas();
+            });
+            on('radiusInput', 'input', e => {
+                state.radius = parseInt(e.target.value);
+                document.getElementById('radiusVal').textContent = state.radius + 'px';
+                updateCanvas();
+            });
+            on('shadowCheck', 'change', e => { state.shadow = e.target.checked; updateCanvas(); });
+
+            // Text
+            on('textCheck', 'change', e => {
+                state.textEnabled = e.target.checked;
+                const el = document.getElementById('textControls');
+                if (state.textEnabled) {
+                    el.classList.remove('opacity-50', 'pointer-events-none');
+                } else {
+                    el.classList.add('opacity-50', 'pointer-events-none');
+                }
+                updateCanvas();
+            });
+            on('overlayText', 'input', e => { state.text = e.target.value; updateCanvas(); });
+            on('textColor', 'input', e => { state.textColor = e.target.value; updateCanvas(); });
+            on('textSize', 'input', e => { state.textSize = parseInt(e.target.value); updateCanvas(); });
+            on('textX', 'input', e => { state.textX = parseInt(e.target.value); updateCanvas(); });
+            on('textY', 'input', e => { state.textY = parseInt(e.target.value); updateCanvas(); });
+
+            // Files & Drag-Drop
+            on('dropZone', 'click', () => fileInput.click());
+            on('fileInput', 'change', e => handleFile(e.target.files[0]));
+
+            dropZone.addEventListener('dragover', e => {
+                e.preventDefault();
+                dropZone.classList.add('border-brand-500', 'bg-slate-800');
+            });
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('border-brand-500', 'bg-slate-800');
+            });
+            dropZone.addEventListener('drop', e => {
+                e.preventDefault();
+                dropZone.classList.remove('border-brand-500', 'bg-slate-800');
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+            });
+
+            // Paste Support
+            window.addEventListener('paste', e => {
+                const items = e.clipboardData.items;
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i].type.indexOf('image') !== -1) {
+                        const blob = items[i].getAsFile();
+                        handleFile(blob);
+                        break;
+                    }
+                }
+            });
+
+            // Reset
+            on('resetBtn', 'click', () => {
+                state.padding = 60;
+                state.radius = 20;
+                state.angle = 135;
+                state.color1 = '#0f172a';
+                state.color2 = '#38bdf8';
+                state.shadow = true;
+
+                // Update UI
+                document.getElementById('paddingInput').value = 60;
+                document.getElementById('radiusInput').value = 20;
+                document.getElementById('paddingVal').textContent = '60px';
+                document.getElementById('radiusVal').textContent = '20px';
+                document.getElementById('color1').value = '#0f172a';
+                document.getElementById('color2').value = '#38bdf8';
+                document.getElementById('bgAngle').value = 135;
+                document.getElementById('shadowCheck').checked = true;
+
+                updateCanvas();
+                showToast("Settings reset to default");
+            });
+        }
+
+        // --- Core Logic ---
+        function setPreset(w, h) {
+            state.canvasW = w;
+            state.canvasH = h;
+            document.getElementById('dimsLabel').textContent = `${w} x ${h}`;
+
+            // Highlight active button
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.classList.remove('active', 'border-brand-500', 'text-white', 'shadow-lg', 'shadow-brand-500/10');
+                btn.classList.add('text-slate-300', 'border-slate-700');
+            });
+            event.target.classList.remove('text-slate-300', 'border-slate-700');
+            event.target.classList.add('active', 'border-brand-500', 'text-white', 'shadow-lg', 'shadow-brand-500/10');
+
+            updateCanvas();
+        }
+
+        function setGradient(c1, c2) {
+            state.color1 = c1;
+            state.color2 = c2;
+            document.getElementById('color1').value = c1;
+            document.getElementById('color2').value = c2;
+            updateCanvas();
+        }
+
+        function handleFile(file) {
+            if (!file || !file.type.startsWith('image/')) return;
+            const reader = new FileReader();
+            reader.onload = e => {
+                const img = new Image();
+                img.onload = () => {
+                    state.image = img;
+                    updateCanvas();
+                    showToast('Image Uploaded!');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function updateCanvas() {
+            canvas.width = state.canvasW;
+            canvas.height = state.canvasH;
+
+            // 1. Draw Background Gradient
+            const cx = state.canvasW / 2;
+            const cy = state.canvasH / 2;
+            // Convert angle for generic linear gradient logic
+            const angleRad = (state.angle - 90) * (Math.PI / 180);
+            const dist = Math.sqrt(Math.pow(cx, 2) + Math.pow(cy, 2));
+            const x1 = cx - dist * Math.cos(angleRad);
+            const y1 = cy - dist * Math.sin(angleRad);
+            const x2 = cx + dist * Math.cos(angleRad);
+            const y2 = cy + dist * Math.sin(angleRad);
+
+            const grd = ctx.createLinearGradient(x1, y1, x2, y2);
+            grd.addColorStop(0, state.color1);
+            grd.addColorStop(1, state.color2);
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, state.canvasW, state.canvasH);
+
+            // 2. Draw Image with styles
+            if (state.image) {
+                const availW = state.canvasW - (state.padding * 2);
+                const availH = state.canvasH - (state.padding * 2);
+
+                if (availW > 0 && availH > 0) {
+                    // "Contain" logic
+                    const scale = Math.min(availW / state.image.width, availH / state.image.height);
+                    const drawW = state.image.width * scale;
+                    const drawH = state.image.height * scale;
+                    const drawX = (state.canvasW - drawW) / 2;
+                    const drawY = (state.canvasH - drawH) / 2;
+
+                    ctx.save();
+
+                    if (state.shadow) {
+                        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+                        ctx.shadowBlur = 40;
+                        ctx.shadowOffsetY = 20;
+                    }
+
+                    // Create Rounded Path
+                    roundedRect(ctx, drawX, drawY, drawW, drawH, state.radius);
+                    ctx.clip();
+
+                    ctx.drawImage(state.image, drawX, drawY, drawW, drawH);
+                    ctx.restore();
+                }
+            }
+
+            // 3. Draw Overlay Text
+            if (state.textEnabled && state.text) {
+                ctx.save();
+                ctx.fillStyle = state.textColor;
+                ctx.font = `bold ${state.textSize}px Inter, system-ui, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                // Simple Text Shadow
+                ctx.shadowColor = 'rgba(0,0,0,0.5)';
+                ctx.shadowBlur = 8;
+                ctx.shadowOffsetY = 2;
+
+                const txtX = state.canvasW * (state.textX / 100);
+                const txtY = state.canvasH * (state.textY / 100);
+
+                ctx.fillText(state.text, txtX, txtY);
+                ctx.restore();
+            }
+        }
+
+        // Helper for rounded rectangles in Canvas
+        function roundedRect(ctx, x, y, width, height, radius) {
+            if (width < 2 * radius) radius = width / 2;
+            if (height < 2 * radius) radius = height / 2;
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.arcTo(x + width, y, x + width, y + height, radius);
+            ctx.arcTo(x + width, y + height, x, y + height, radius);
+            ctx.arcTo(x, y + height, x, y, radius);
+            ctx.arcTo(x, y, x + width, y, radius);
+            ctx.closePath();
+        }
+
+        // --- Export & UI Utils ---
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = `beautified-${Date.now()}.png`;
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+            showToast('Download started');
+        }
+
+        function copyImage() {
+            if (!navigator.clipboard) { showToast('Clipboard not supported'); return; }
+            canvas.toBlob(blob => {
+                navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+                    .then(() => showToast('Copied to clipboard!'))
+                    .catch(() => showToast('Failed to copy'));
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-24', 'opacity-0'), 3000);
+        }
+
+        // Boot
+        init();
+    </script>
+</body>
+
+</html>

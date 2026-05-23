@@ -1,0 +1,76 @@
+{
+  "id": "json-formatter",
+  "name": "JSON Formatter & Validator",
+  "version": "2.0.0",
+  "description": "Advanced JSON formatter with real-time validation, detailed error diagnostics, tree view, and minification. Format, validate, and explore JSON structures instantly—100% free and private.",
+  "shortDescription": "Format, validate & explore JSON",
+  "category": "text",
+  "subcategory": "formatting",
+  "keywords": [
+    "json formatter",
+    "json validator",
+    "beautify json",
+    "minify json",
+    "json tree view",
+    "format json online",
+    "json syntax checker",
+    "json error detection",
+    "json beautifier",
+    "json parser"
+  ],
+  "tags": ["json", "formatter", "validator", "developer", "api", "tree-view"],
+  "thumbnail": "/assets/images/tools/json-formatter.png",
+  "icon": "{ }",
+  "color": "#F59E0B",
+  "featured": false,
+  "popular": true,
+  "new": false,
+  "url": "/tools/json-formatter/",
+  "rating": 4.9,
+  "ratingCount": 1120,
+  "usageCount": 35000,
+  "lastUpdated": "2025-01-30",
+  "features": [
+    "Advanced JSON validation with detailed error messages",
+    "Beautify with customizable indentation (2/4 spaces, tabs)",
+    "Minify for production with size comparison",
+    "Interactive tree view for exploring structures",
+    "Sort object keys alphabetically",
+    "Escape unicode characters option",
+    "Download formatted JSON as .json file",
+    "Copy to clipboard with one click",
+    "Keyboard shortcuts for faster workflow",
+    "Real-time validation as you type",
+    "Line and column error reporting",
+    "Sample JSON data loader",
+    "100% private - all processing in browser"
+  ],
+  "useCases": [
+    "Debugging API responses and payloads",
+    "Formatting configuration files (package.json, tsconfig.json)",
+    "Validating JSON data before deployment",
+    "Preparing JSON for production optimization",
+    "Exploring complex nested data structures",
+    "Learning and teaching JSON syntax",
+    "Code reviews and documentation",
+    "Data migration and ETL processes"
+  ],
+  "browserSupport": {
+    "chrome": "90+",
+    "firefox": "88+",
+    "safari": "14+",
+    "edge": "90+"
+  },
+  "privacy": {
+    "dataCollection": false,
+    "localStorage": false,
+    "serverUpload": false,
+    "tracking": false
+  },
+  "seo": {
+    "title": "JSON Formatter & Validator - Beautify, Minify & Tree View",
+    "metaDescription": "Advanced JSON formatter with real-time validation, detailed error diagnostics, tree view, and minification. Format, validate, and explore JSON structures instantly—100% free and private.",
+    "ogImage": "/assets/images/og/json-formatter.png",
+    "canonicalUrl": "https://freeclipboard.com/tools/json-formatter/"
+  }
+}

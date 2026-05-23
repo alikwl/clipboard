@@ -1,0 +1,67 @@
+{
+  "id": "image-converter",
+  "name": "Image Converter",
+  "version": "1.0.0",
+  "description": "Convert images between PNG, JPG, WebP formats with resize and compression options. Fast, easy-to-use image format converter with quality control.",
+  "shortDescription": "Convert image formats",
+  "category": "image",
+  "subcategory": "conversion",
+  "keywords": [
+    "image converter",
+    "convert png to jpg",
+    "convert jpg to png",
+    "webp converter",
+    "image format converter",
+    "resize image",
+    "compress image",
+    "image quality"
+  ],
+  "tags": ["image", "converter", "resize", "compression", "format"],
+  "thumbnail": "/assets/images/tools/image-converter.png",
+  "icon": "🔄",
+  "color": "#10B981",
+  "featured": true,
+  "popular": true,
+  "new": true,
+  "url": "/tools/image-converter/",
+  "rating": 4.8,
+  "ratingCount": 720,
+  "usageCount": 28000,
+  "lastUpdated": "2025-11-25",
+  "features": [
+    "Convert PNG, JPG, WebP formats",
+    "Resize images with aspect ratio lock",
+    "Quality/compression control",
+    "Drag and drop upload",
+    "Side-by-side preview",
+    "File size comparison",
+    "One-click download",
+    "10MB file size limit",
+    "100% client-side processing"
+  ],
+  "useCases": [
+    "Optimizing images for web",
+    "Converting screenshots",
+    "Reducing file sizes",
+    "Preparing images for social media",
+    "Batch image processing"
+  ],
+  "browserSupport": {
+    "chrome": "90+",
+    "firefox": "88+",
+    "safari": "14+",
+    "edge": "90+"
+  },
+  "privacy": {
+    "dataCollection": false,
+    "localStorage": false,
+    "serverUpload": false,
+    "tracking": false
+  },
+  "seo": {
+    "title": "Image Converter - Convert PNG, JPG, WebP, SVG Online Free",
+    "metaDescription": "Convert images between PNG, JPG, WebP, SVG formats quickly and easily online. Free image converter with resize, compression, and quality control.",
+    "ogImage": "/assets/images/og/image-converter.png",
+    "canonicalUrl": "https://freeclipboard.com/tools/image-converter/"
+  }
+}

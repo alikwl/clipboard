@@ -1,0 +1,93 @@
+{
+  "name": "FreeClipboard - Free Online Tools",
+  "short_name": "FreeClipboard",
+  "description": "Free online tools for developers, writers, and professionals. Clipboard manager, text utilities, QR code generator, password generator, and 40+ more tools.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3B82F6",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["utilities", "productivity", "developer tools"],
+  "icons": [
+    {
+      "src": "/assets/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Clipboard Manager",
+      "short_name": "Clipboard",
+      "description": "Manage your clipboard history",
+      "url": "/tools/free-clipboard/",
+      "icons": [{ "src": "/assets/images/shortcuts/clipboard.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Password Generator",
+      "short_name": "Password",
+      "description": "Generate secure passwords",
+      "url": "/tools/password-generator/",
+      "icons": [{ "src": "/assets/images/shortcuts/password.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Word Counter",
+      "short_name": "Word Count",
+      "description": "Count words and characters",
+      "url": "/tools/word-counter/",
+      "icons": [{ "src": "/assets/images/shortcuts/word-counter.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "JSON Formatter",
+      "short_name": "JSON",
+      "description": "Format and validate JSON",
+      "url": "/tools/json-formatter/",
+      "icons": [{ "src": "/assets/images/shortcuts/json.png", "sizes": "96x96" }]
+    }
+  ]
+}

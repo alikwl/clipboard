@@ -1,0 +1,181 @@
+{
+  "tool": {
+    "id": "text-to-handwriting",
+    "name": "Text to Handwriting Converter",
+    "slug": "text-to-handwriting",
+    "description": "Convert typed text to realistic handwriting instantly. Customize fonts, colors, paper styles, and download as PNG or PDF. Perfect for assignments, notes, and letters.",
+    "shortDescription": "Convert text to handwriting",
+    "category": "text",
+    "keywords": [
+      "text to handwriting",
+      "handwriting converter",
+      "handwriting generator",
+      "text to handwritten",
+      "convert text to handwriting",
+      "handwriting font",
+      "handwritten text generator",
+      "fake handwriting",
+      "digital handwriting",
+      "handwriting maker"
+    ],
+    "features": [
+      "Multiple handwriting styles",
+      "Customizable pen colors",
+      "Various paper types (lined, grid, dotted)",
+      "Adjustable text size and spacing",
+      "Download as PNG or PDF",
+      "Real-time preview",
+      "Copy to clipboard",
+      "Print support",
+      "Random letter variation",
+      "Advanced customization options"
+    ],
+    "useCases": [
+      "School assignments and homework",
+      "Personal letters and notes",
+      "Greeting cards",
+      "Social media posts",
+      "Calligraphy practice",
+      "Document creation",
+      "Art projects",
+      "Presentations"
+    ],
+    "icon": "✍️",
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "url": "/tools/text-to-handwriting/",
+    "rating": 4.9,
+    "usageCount": 0,
+    "version": "1.0.0",
+    "lastUpdated": "2025-01-25"
+  },
+  "metadata": {
+    "author": "FreeClipboard",
+    "license": "Free to use",
+    "privacy": "All processing happens in your browser. No data is sent to servers.",
+    "browserSupport": {
+      "chrome": "90+",
+      "firefox": "88+",
+      "safari": "14+",
+      "edge": "90+"
+    },
+    "mobileSupport": true,
+    "offlineSupport": true
+  },
+  "customization": {
+    "handwritingStyles": [
+      {
+        "id": "style1",
+        "name": "Casual Script",
+        "font": "Caveat",
+        "description": "Relaxed, everyday handwriting style"
+      },
+      {
+        "id": "style2",
+        "name": "Elegant Cursive",
+        "font": "Dancing Script",
+        "description": "Flowing, elegant cursive writing"
+      },
+      {
+        "id": "style3",
+        "name": "Print Style",
+        "font": "Patrick Hand",
+        "description": "Clear, printed handwriting"
+      },
+      {
+        "id": "style4",
+        "name": "Bold Script",
+        "font": "Shadows Into Light",
+        "description": "Bold, confident handwriting"
+      },
+      {
+        "id": "style5",
+        "name": "Neat Handwriting",
+        "font": "Indie Flower",
+        "description": "Clean, organized writing style"
+      }
+    ],
+    "paperTypes": [
+      {
+        "id": "plain",
+        "name": "Plain White",
+        "description": "Clean white paper"
+      },
+      {
+        "id": "lined",
+        "name": "Lined Paper",
+        "description": "Standard ruled paper"
+      },
+      {
+        "id": "grid",
+        "name": "Grid Paper",
+        "description": "Graph paper with grid lines"
+      },
+      {
+        "id": "dotted",
+        "name": "Dotted Paper",
+        "description": "Dot grid paper"
+      },
+      {
+        "id": "vintage",
+        "name": "Vintage Paper",
+        "description": "Aged, vintage-looking paper"
+      }
+    ],
+    "penColors": [
+      {
+        "name": "Blue",
+        "hex": "#0000ff"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Red",
+        "hex": "#ff0000"
+      },
+      {
+        "name": "Green",
+        "hex": "#008000"
+      }
+    ]
+  },
+  "tips": [
+    "Use 16-20px text size for best readability",
+    "Choose line spacing between 1.5-2.0 to prevent overlap",
+    "Enable random variation for more natural-looking handwriting",
+    "Select paper type that matches your intended use",
+    "Adjust margins to fit standard paper sizes",
+    "Preview before downloading to ensure everything looks perfect",
+    "Use darker pen colors for better visibility",
+    "Increase letter spacing for more legible text"
+  ],
+  "faq": [
+    {
+      "question": "Is this tool really free?",
+      "answer": "Yes! The Text to Handwriting Converter is completely free to use with no hidden costs or limitations."
+    },
+    {
+      "question": "Can I use this for school assignments?",
+      "answer": "While the tool can convert text to handwriting, we recommend checking with your teacher about their policies on digitally generated handwriting."
+    },
+    {
+      "question": "What formats can I download?",
+      "answer": "You can download your handwritten text as PNG image or PDF document. You can also copy it directly to your clipboard."
+    },
+    {
+      "question": "Is my text stored on your servers?",
+      "answer": "No! All processing happens entirely in your browser. Your text never leaves your device."
+    },
+    {
+      "question": "Can I customize the handwriting style?",
+      "answer": "Yes! You can choose from 5 different handwriting styles, customize pen color, text size, spacing, and much more."
+    },
+    {
+      "question": "Does it work on mobile devices?",
+      "answer": "Absolutely! The tool is fully responsive and works perfectly on smartphones and tablets."
+    }
+  ]
+}

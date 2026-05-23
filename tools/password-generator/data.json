@@ -1,0 +1,67 @@
+{
+  "id": "password-generator",
+  "name": "Password Generator",
+  "version": "1.0.0",
+  "description": "Generate strong, secure, random passwords with customizable length and character options for maximum security. Create unbreakable passwords in seconds.",
+  "shortDescription": "Create secure passwords",
+  "category": "security",
+  "subcategory": "password",
+  "keywords": [
+    "password generator",
+    "strong password",
+    "secure password",
+    "random password",
+    "password creator",
+    "password maker",
+    "generate password",
+    "password strength"
+  ],
+  "tags": ["security", "password", "generator", "encryption", "privacy"],
+  "thumbnail": "/assets/images/tools/password-generator.png",
+  "icon": "🔐",
+  "color": "#EF4444",
+  "featured": true,
+  "popular": true,
+  "new": false,
+  "url": "/tools/password-generator/",
+  "rating": 4.9,
+  "ratingCount": 1450,
+  "usageCount": 42000,
+  "lastUpdated": "2025-11-25",
+  "features": [
+    "Customizable password length (4-128 characters)",
+    "Include/exclude uppercase letters",
+    "Include/exclude lowercase letters",
+    "Include/exclude numbers",
+    "Include/exclude special characters",
+    "Password strength indicator",
+    "One-click copy to clipboard",
+    "Generate multiple passwords",
+    "Completely random and secure"
+  ],
+  "useCases": [
+    "Creating strong account passwords",
+    "Generating API keys",
+    "Securing sensitive accounts",
+    "Password manager entries",
+    "Database credentials"
+  ],
+  "browserSupport": {
+    "chrome": "90+",
+    "firefox": "88+",
+    "safari": "14+",
+    "edge": "90+"
+  },
+  "privacy": {
+    "dataCollection": false,
+    "localStorage": false,
+    "serverUpload": false,
+    "tracking": false
+  },
+  "seo": {
+    "title": "Password Generator - Create Strong Secure Random Passwords",
+    "metaDescription": "Generate strong, secure, random passwords with customizable length and character options. Free password generator for maximum security and protection.",
+    "ogImage": "/assets/images/og/password-generator.png",
+    "canonicalUrl": "https://freeclipboard.com/tools/password-generator/"
+  }
+}

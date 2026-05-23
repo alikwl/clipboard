@@ -1,0 +1,115 @@
+# robots.txt for FreeClipboard.com
+# Last updated: 2026-05-13
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow non-essential source paths
+Disallow: /*.json$
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_data/
+Disallow: /.jekyll-cache/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+
+# Allow important assets so crawlers can render pages correctly
+Allow: /assets/js/
+Allow: /assets/css/
+Allow: /assets/images/
+Allow: /assets/downloads/
+Allow: /llms.txt
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Googlebot Image
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# ===========================
+# AI Search Engine Crawlers
+# ===========================
+
+# GPTBot (OpenAI / ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT-User (ChatGPT browsing)
+User-agent: ChatGPT-User
+Allow: /
+
+# Google-Extended (Gemini AI training)
+User-agent: Google-Extended
+Allow: /
+
+# Google Gemini browsing
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# CCBot (Common Crawl - used by many AI systems)
+User-agent: CCBot
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+# Brave Search AI
+User-agent: BraveBot
+Allow: /
+
+# Bytespider (ByteDance / TikTok AI)
+User-agent: Bytespider
+Allow: /
+
+# Sitemaps
+Sitemap: https://freeclipboard.com/sitemap.xml
+Sitemap: https://freeclipboard.com/sitemap-tools.xml
+
+# Host
+Host: https://freeclipboard.com

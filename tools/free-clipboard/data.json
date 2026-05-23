@@ -1,0 +1,66 @@
+{
+  "id": "free-clipboard",
+  "name": "Free Clipboard Manager",
+  "version": "1.0.0",
+  "description": "Store, manage, and organize unlimited clipboard items with smart categorization, search, favorites, and export/import capabilities. Never lose your copied text again.",
+  "shortDescription": "Store & organize clipboard history",
+  "category": "clipboard",
+  "subcategory": "productivity",
+  "keywords": [
+    "clipboard manager",
+    "clipboard history",
+    "clipboard organizer",
+    "copy paste manager",
+    "text storage",
+    "clipboard tool",
+    "clipboard saver",
+    "clipboard memory"
+  ],
+  "tags": ["productivity", "text", "clipboard", "storage", "organization"],
+  "thumbnail": "/assets/images/tools/clipboard-manager.png",
+  "icon": "📋",
+  "color": "#3B82F6",
+  "featured": true,
+  "popular": true,
+  "new": false,
+  "url": "/tools/free-clipboard/",
+  "rating": 4.9,
+  "ratingCount": 1250,
+  "usageCount": 45000,
+  "lastUpdated": "2025-11-25",
+  "features": [
+    "Unlimited clipboard storage",
+    "Smart auto-categorization (Text, Code, URL, Email)",
+    "Real-time search functionality",
+    "Favorites system",
+    "Edit and delete items",
+    "Copy count tracking",
+    "Export/Import clipboard data (JSON)",
+    "Statistics dashboard",
+    "Works offline"
+  ],
+  "useCases": [
+    "Writers managing multiple text snippets",
+    "Developers storing code snippets",
+    "Researchers organizing quotes and references",
+    "Content creators managing social media posts"
+  ],
+  "browserSupport": {
+    "chrome": "90+",
+    "firefox": "88+",
+    "safari": "14+",
+    "edge": "90+"
+  },
+  "privacy": {
+    "dataCollection": false,
+    "localStorage": true,
+    "serverUpload": false,
+    "tracking": false
+  },
+  "seo": {
+    "title": "Free Clipboard Manager - Store & Organize Clipboard History",
+    "metaDescription": "Store, manage, and organize unlimited clipboard items with smart categorization, search, favorites, and export/import. Never lose your copied text again.",
+    "ogImage": "/assets/images/og/clipboard-manager.png",
+    "canonicalUrl": "https://freeclipboard.com/tools/free-clipboard/"
+  }
+}

@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://freeclipboard.com/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/og-image.png</image:loc>
+      <image:title>FreeClipboard - Free Online Tools</image:title>
+    </image:image>
+  </url>
+
+  <!-- Main Category Pages - High Priority -->
+  <url>
+    <loc>https://freeclipboard.com/all-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/clipboard-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/text-utilities/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/image-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/design-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/generators-security/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/utilities/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/calculators/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/education-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/business-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/ai-tools/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- All Tool Pages from Metadata -->
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/free-clipboard/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/clipboard-manager.png</image:loc>
+      <image:title>Free Clipboard Manager</image:title>
+      <image:caption>Store, manage, and organize unlimited clipboard items with smart categorization, search, favorites, and export/import capabilities.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/word-counter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/word-counter.png</image:loc>
+      <image:title>Word Counter</image:title>
+      <image:caption>Count words, characters, sentences, paragraphs, and reading time in real-time. Perfect for writers, students, and content creators.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/character-counter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/character-counter.png</image:loc>
+      <image:title>Character Counter</image:title>
+      <image:caption>Count characters, letters, numbers, and special characters in your text with detailed statistics and analysis.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/online-notepad/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/scratch-pad/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/clipboard-share/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/password-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/password-generator.png</image:loc>
+      <image:title>Password Generator</image:title>
+      <image:caption>Generate strong, secure, random passwords with customizable length and character options for maximum security.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/image-converter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/image-converter.png</image:loc>
+      <image:title>Image Converter</image:title>
+      <image:caption>Convert images between PNG, JPG, WebP formats with resize and compression options. Fast and easy to use.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/qr-code-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/qr-generator.png</image:loc>
+      <image:title>QR Code Generator</image:title>
+      <image:caption>Generate QR codes from text, URLs, emails, phone numbers, and WiFi credentials with customizable size and instant download.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/color-picker/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/color-picker.png</image:loc>
+      <image:title>Color Picker</image:title>
+      <image:caption>Pick colors and convert between HEX, RGB, and HSL formats. Perfect for designers and developers.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/json-formatter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/json-formatter.png</image:loc>
+      <image:title>JSON Formatter</image:title>
+      <image:caption>Beautify, validate, and format JSON code instantly. Fix syntax errors and minify for production.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/base64-encoder/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/base64-encoder.png</image:loc>
+      <image:title>Base64 Encoder/Decoder</image:title>
+      <image:caption>Encode text to Base64 or decode Base64 strings back to text instantly. Essential for developers.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/url-encoder/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/url-encoder.png</image:loc>
+      <image:title>URL Encoder/Decoder</image:title>
+      <image:caption>Encode text to URL-safe strings or decode URLs. Essential for web development and API work.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/html-encoder/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/html-encoder.png</image:loc>
+      <image:title>HTML Encoder/Decoder</image:title>
+      <image:caption>Encode HTML entities or decode HTML strings safely. Prevent XSS attacks and display HTML correctly.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/text-formatter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/text-formatter.png</image:loc>
+      <image:title>Text Formatter</image:title>
+      <image:caption>Transform text case, remove spaces, and format text in various ways. Uppercase, lowercase, title case, and more.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/text-to-handwriting/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/text-to-handwriting.png</image:loc>
+      <image:title>Text to Handwriting Converter</image:title>
+      <image:caption>Convert typed text into realistic handwriting on ruled or graph paper. Choose fonts, colors, spacing, and export as PNG/JPG.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/regex-tester/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/regex-tester.png</image:loc>
+      <image:title>Regex Tester</image:title>
+      <image:caption>Test and debug regular expressions with live pattern matching and explanations. Perfect for developers.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/hash-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/hash-generator.png</image:loc>
+      <image:title>Hash Generator</image:title>
+      <image:caption>Generate MD5, SHA-1, SHA-256, and other hash values from text. Secure hashing for passwords and data.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/uuid-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/uuid-generator.png</image:loc>
+      <image:title>UUID Generator</image:title>
+      <image:caption>Generate unique UUIDs (v4) for your applications instantly. Perfect for database keys and identifiers.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/unit-converter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/unit-converter.png</image:loc>
+      <image:title>Unit Converter</image:title>
+      <image:caption>Convert between different units of measurement instantly. Length, weight, temperature, and more.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/code-snippet-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/code-snippet.png</image:loc>
+      <image:title>Code Snippet Generator</image:title>
+      <image:caption>Generate formatted code snippets in multiple programming languages with syntax highlighting.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/markdown-preview/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/markdown-preview.png</image:loc>
+      <image:title>Markdown Preview</image:title>
+      <image:caption>Preview markdown in real-time with live rendering. Perfect for documentation and README files.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/json-to-csv-converter/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/json-to-csv-converter.png</image:loc>
+      <image:title>JSON to CSV Converter</image:title>
+      <image:caption>Convert JSON and NDJSON to CSV with optional flattening, custom delimiter, headers, quoting, and BOM.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/robots-txt-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/robots-txt-generator.png</image:loc>
+      <image:title>Robots.txt Generator</image:title>
+      <image:caption>Create a standards-compliant robots.txt with visual allow/disallow rules, user-agent selection, crawl-delay, and sitemap URL.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/meta-tag-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/meta-tag-generator.png</image:loc>
+      <image:title>Meta Tag Generator for SEO</image:title>
+      <image:caption>Generate valid meta tags: description, robots, canonical, Open Graph, Twitter Cards, favicon, and theme color.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/cat-age-calculator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/holiday-countdown/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/water-intake-calculator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/pizza-party-calculator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/social-media-image-resizer/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/svg-blob-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/free-clipboard-image-studio/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/screenshot-beautifier/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/tools/screenshot-beautifier.png</image:loc>
+      <image:title>Instant Screenshot Beautifier</image:title>
+      <image:caption>Instantly add backgrounds, shadows, and rounded corners to your screenshots. Create beautiful mockups for social media.</image:caption>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/neumorphism-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/glitch-text-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/cursed-text-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/invisible-character/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/small-caps-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/energy-analyzer/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/waste-tracker/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/flashcards/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/headline-analyzer/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/invoice-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/micro-crm/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/glassmorphism-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/discord-spoiler-text-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/youtube-title-generator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tools/nolimitgpt/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    
+  </url>
+  
+
+  <!-- Free Resources -->
+  <url>
+    <loc>https://freeclipboard.com/free-resources/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/free-resources/flow-veo-automator/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://freeclipboard.com/blog/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  
+  <url>
+    <loc>https://freeclipboard.com/blog/free-online-developer-tools-no-login/</loc>
+    <lastmod>2026-05-13T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/dev-tools-no-login.webp</image:loc>
+      <image:title>Top 10 Free Online Developer Tools That Work Without Login in 2026</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/guides/qr-code-marketing-guide/</loc>
+    <lastmod>2025-01-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/qr-code-marketing.webp</image:loc>
+      <image:title>QR Code Marketing in 2025: Complete Guide to Boost Engagement &amp; Sales</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/guides/image-converter-complete-guide/</loc>
+    <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/image-converter-guide.webp</image:loc>
+      <image:title>Image Format Conversion Guide: PNG, JPG, WebP - When to Use Each Format</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/security/ultimate-guide-password-security/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/password-security-guide.webp</image:loc>
+      <image:title>The Ultimate Guide to Password Security in 2025: Best Practices &amp; Tools</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/productivity/clipboard-manager-productivity-hacks/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/clipboard-productivity.webp</image:loc>
+      <image:title>10 Clipboard Manager Productivity Hacks That Will Save You Hours Every Week</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tips/text-formatting-tips-writers/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/text-formatting-tips.webp</image:loc>
+      <image:title>15 Essential Text Formatting Tips Every Writer Should Know in 2025</image:title>
+    </image:image>
+    
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/tutorials/how-to-use-clipboard-manager/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <image:image>
+      <image:loc>https://freeclipboard.com/assets/images/blog/clipboard-manager-guide.avif</image:loc>
+      <image:title>How to Use the Free Clipboard Manager Effectively: Complete Guide 2025</image:title>
+    </image:image>
+    
+  </url>
+  
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://freeclipboard.com/about/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/contact/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/privacy-policy/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://freeclipboard.com/terms-of-service/</loc>
+    <lastmod>2026-05-23T13:46:19+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

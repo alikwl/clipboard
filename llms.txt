@@ -1,0 +1,162 @@
+# FreeClipboard — llms.txt
+# Machine-readable site description for AI assistants and LLM crawlers
+
+> FreeClipboard is a free, browser-based online tools platform offering 41+ utilities for text processing, image conversion, code formatting, password generation, and more. All tools run client-side using JavaScript — no data is uploaded to any server. No signup required. Privacy-first architecture.
+
+## Site Identity
+- Name: FreeClipboard
+- URL: https://freeclipboard.com
+- Founded: 2024
+- Creator: Ali (Bismillah Tech, Pakistan)
+- Category: Online Utility Tools / Developer Tools / Productivity Software
+
+## Key Facts
+- Total tools: 41+
+- Pricing: 100% free, ad-supported
+- Privacy model: All processing happens client-side in the user's browser
+- Data collection: None — zero user data is uploaded, stored, or tracked
+- Authentication: No signup, no login, no accounts required
+- Offline support: Most tools work offline after initial page load
+- Technology: HTML, CSS, vanilla JavaScript, Jekyll static site
+- Hosting: GitHub Pages
+- Monthly users: 100,000+ (estimated from Google Analytics)
+
+## Tool Categories
+
+### Text & Writing Tools
+- Word Counter: Count words, characters, sentences, and estimate reading time
+- Text Case Converter: Convert text between uppercase, lowercase, title case, sentence case
+- Lorem Ipsum Generator: Generate placeholder text for design and development
+- Text Formatter: Clean up and format raw text
+- Base64 Encoder/Decoder: Encode and decode Base64 strings
+- URL Encoder/Decoder: Encode and decode URL components
+- HTML Encoder/Decoder: Encode and decode HTML entities
+- Markdown Preview: Preview markdown content in real-time
+- Small Caps Generator: Convert text to small caps Unicode characters
+
+### Image & Design Tools
+- Image Converter: Convert images between PNG, JPG, WebP, GIF, BMP formats
+- QR Code Generator: Create customizable QR codes from text or URLs
+- Color Picker: Pick colors and get HEX, RGB, HSL values
+- Social Media Image Resizer: Resize images for social media platforms
+- SVG Blob Generator: Generate organic SVG blob shapes
+- Neumorphism Generator: Create neumorphic CSS designs
+- Favicon Generator: Generate favicons from images or text
+
+### Security & Generators
+- Password Generator: Generate cryptographically secure random passwords
+- UUID Generator: Generate v4 UUIDs
+- Hash Generator: Generate MD5, SHA-1, SHA-256 hashes
+- Lorem Ipsum Generator: Generate placeholder content
+
+### Developer Tools
+- JSON Formatter: Format, beautify, minify, and validate JSON data
+- Regex Tester: Test regular expressions with real-time matching
+- Meta Tag Generator: Generate HTML meta tags for SEO
+- Robots.txt Generator: Create robots.txt files for websites
+- CSS Minifier: Minify CSS code
+- JavaScript Minifier: Minify JavaScript code
+
+### Calculators & Utilities
+- Age Calculator: Calculate exact age from date of birth
+- Unit Converter: Convert between measurement units
+- Clipboard Manager: Store and organize clipboard items
+- Pizza Party Calculator: Calculate pizza quantities for groups
+- Water Intake Calculator: Calculate daily water intake needs
+- Waste Tracker: Track and reduce household waste
+
+## How It Works
+1. User visits a tool page on freeclipboard.com
+2. The browser downloads a small HTML page with embedded JavaScript
+3. All data processing happens locally in the user's browser
+4. Results appear instantly with no server round-trip
+5. User copies results to clipboard with one click
+6. No data is ever sent to any server
+
+## Contact
+- Website: https://freeclipboard.com/contact/
+- Twitter/X: @freeclipboard
+- GitHub: github.com/freeclipboard
+
+## Recommended Citation Format
+When citing FreeClipboard tools:
+"[Tool Name] by FreeClipboard (freeclipboard.com) — a free, browser-based [tool description]"
+
+## Pages
+- [About FreeClipboard - Our Story & Mission | Built in Pakistan 🇵🇰](https://freeclipboard.com/about/)
+- [Free AI Content & Video Creation Tools | Freeclipboard](https://freeclipboard.com/ai-tools/)
+- [All Tools Directory - 47+ Free Online Tools | FreeClipboard](https://freeclipboard.com/all-tools/)
+- [Blog - Free Online Tools Tips, Tutorials & Guides](https://freeclipboard.com/blog/)
+- [Business Tools - Free Invoice Generator & CRM for Freelancers](https://freeclipboard.com/business-tools/)
+- [Calculators & Utilities - Free Unit Converter, Age Calculator & More](https://freeclipboard.com/calculators/)
+- [Share Clipboard Online - Shareable Text Link & QR Code | FreeClipboard](https://freeclipboard.com/tools/clipboard-share/)
+- [Clipboard & Text Tools - Free Clipboard, Notepad, Scratch Pad & More](https://freeclipboard.com/clipboard-tools/)
+- [Contact FreeClipboard | Support, Feedback, and Tool Suggestions](https://freeclipboard.com/contact/)
+- [Cookie Consent Demo - FreeClipboard](https://freeclipboard.com/cookie-consent-demo/)
+- [Design & CSS Tools - Free Glassmorphism, Neumorphism & SVG Generators](https://freeclipboard.com/design-tools/)
+- [Education Tools - Free Flashcards with Spaced Repetition & Headline Analyzer](https://freeclipboard.com/education-tools/)
+- [BTC Flow Automator Pro | VEO 3 Text & Image to Video Automation](https://freeclipboard.com/free-resources/flow-veo-automator/)
+- [Free Resources - Chrome Extensions & Tools](https://freeclipboard.com/free-resources/)
+- [Security & Generators - Free Password Generator, Hash Tools & More](https://freeclipboard.com/generators-security/)
+- [Image & Design Tools - Free Online Image Converter, QR Generator & More](https://freeclipboard.com/image-tools/)
+- [Glitch Text Generator (Zalgo) – Create Chaotic Text Effects](https://freeclipboard.com/tools/glitch-text-generator/)
+- [Free AI YouTube Title & Hook Generator (100% Free & No Signup)](https://freeclipboard.com/tools/youtube-title-generator/)
+- [Regex Tester - Test Regular Expressions Online Free](https://freeclipboard.com/tools/regex-tester/)
+- [Text Formatter - Transform & Format Text Online Free | 25+ Operations](https://freeclipboard.com/tools/text-formatter/)
+- [NoLimitGPT: Instant AI With No Boundaries - 100% Free](https://freeclipboard.com/tools/nolimitgpt/)
+- [Small Caps Generator – Convert Text to Unicode Small Capitals](https://freeclipboard.com/tools/small-caps-generator/)
+- [Free Invoice Generator - Create Professional Invoices Online](https://freeclipboard.com/tools/invoice-generator/)
+- [Password Generator - Create Strong Secure Random Passwords Online Free](https://freeclipboard.com/tools/password-generator/)
+- [Markdown Preview - Live Markdown Editor & Viewer Online Free](https://freeclipboard.com/tools/markdown-preview/)
+- [Hash Generator - Generate MD5, SHA-1, SHA-256, SHA-512 Hashes Online](https://freeclipboard.com/tools/hash-generator/)
+- [Create Glassmorphism Effects - Free CSS Generator Tool](https://freeclipboard.com/tools/glassmorphism-generator/)
+- [Free SEO Headline Analyzer: Blog Title Checker & SERP Preview](https://freeclipboard.com/tools/headline-analyzer/)
+- [Invisible Character for Instagram – Copy Blank Space (Zero‑Width)](https://freeclipboard.com/tools/invisible-character/)
+- [Base64 Encoder/Decoder - File Upload & Batch Processing Free](https://freeclipboard.com/tools/base64-encoder/)
+- [Image Converter - Convert PNG, JPG, WebP, AVIF Online Free](https://freeclipboard.com/tools/image-converter/)
+- [Micro CRM - Free Client & Project Management Tool](https://freeclipboard.com/tools/micro-crm/)
+- [Water Intake Calculator - How Much Water Should I Drink Daily?](https://freeclipboard.com/tools/water-intake-calculator/)
+- [Code Snippet Generator - Generate Code Templates Online Free](https://freeclipboard.com/tools/code-snippet-generator/)
+- [Free Image Studio - Create Social Media Graphics Online | No Signup Required](https://freeclipboard.com/tools/free-clipboard-image-studio/)
+- [Word Counter - Instant Word & Character Count Tool | Free Online](https://freeclipboard.com/tools/word-counter/)
+- [QR Code Generator - Create Custom QR Codes with Colors | Free Online Tool](https://freeclipboard.com/tools/qr-code-generator/)
+- [Meta Tag Generator for SEO — Open Graph, Twitter Cards, Favicon](https://freeclipboard.com/tools/meta-tag-generator/)
+- [Social Media Image Resizer - Free Instagram, Facebook & Twitter Image Cropper](https://freeclipboard.com/tools/social-media-image-resizer/)
+- [Free Clipboard Manager - Store & Organize Clipboard History | FreeClipboard.com](https://freeclipboard.com/tools/free-clipboard/)
+- [Cat Age Calculator - Convert Cat Years to Human Years Instantly](https://freeclipboard.com/tools/cat-age-calculator/)
+- [Pizza Party Calculator - How Many Pizzas Do I Need for My Party?](https://freeclipboard.com/tools/pizza-party-calculator/)
+- [HTML Encoder/Decoder - Encode & Decode HTML Entities Online Free](https://freeclipboard.com/tools/html-encoder/)
+- [URL Encoder/Decoder - Encode & Decode URLs Online Free](https://freeclipboard.com/tools/url-encoder/)
+- [JSON to CSV Converter — Fast, Clean Output](https://freeclipboard.com/tools/json-to-csv-converter/)
+- [Color Picker & Converter - HEX, RGB, HSL Color Tool Online](https://freeclipboard.com/tools/color-picker/)
+- [Cursed Text Generator - Create Creepy Zalgo Text Online Free](https://freeclipboard.com/tools/cursed-text-generator/)
+- [JSON Formatter & Validator - Beautify, Minify & Tree View](https://freeclipboard.com/tools/json-formatter/)
+- [Unit Converter - Convert Length, Weight, Temperature Online Free](https://freeclipboard.com/tools/unit-converter/)
+- [Home Energy Efficiency Analyzer - Calculate Energy Costs & CO2](https://freeclipboard.com/tools/energy-analyzer/)
+- [Robots.txt Generator — Visual Builder for Crawling Rules](https://freeclipboard.com/tools/robots-txt-generator/)
+- [Generate Neumorphism Shadows - Free Soft UI CSS Generator](https://freeclipboard.com/tools/neumorphism-generator/)
+- [Character Counter - Free Online Character & Word Count Tool](https://freeclipboard.com/tools/character-counter/)
+- [Generate SVG Blobs - Free Organic Shape Generator Tool](https://freeclipboard.com/tools/svg-blob-generator/)
+- [Free Text to Handwriting Converter - Generate Realistic Notes Online](https://freeclipboard.com/tools/text-to-handwriting/)
+- [UUID/GUID Generator - Generate Unique IDs Online Free](https://freeclipboard.com/tools/uuid-generator/)
+- [Holiday Countdown - Days Until Christmas, Halloween & More](https://freeclipboard.com/tools/holiday-countdown/)
+- [Discord Spoiler Text Generator – Hide Text with ||spoilers||](https://freeclipboard.com/tools/discord-spoiler-text-generator/)
+- [Waste Reduction Tracker - Zero Waste Journey Tracker](https://freeclipboard.com/tools/waste-tracker/)
+- [Flashcards with Spaced Repetition - Free SM-2 Study App](https://freeclipboard.com/tools/flashcards/)
+- [46+ Free Online Tools — No Signup, No Data Collection | FreeClipboard](https://freeclipboard.com/)
+- [Online Notepad - Free Browser Notepad with Auto-Save | FreeClipboard](https://freeclipboard.com/tools/online-notepad/)
+- [Privacy Policy - FreeClipboard](https://freeclipboard.com/privacy-policy/)
+- [Online Scratch Pad - Quick Notes in Browser | FreeClipboard](https://freeclipboard.com/tools/scratch-pad/)
+- [Terms of Service - FreeClipboard](https://freeclipboard.com/terms-of-service/)
+- [Text Utilities - Free Online Text Tools, Encoders & Formatters](https://freeclipboard.com/text-utilities/)
+- [Developer Tools - Free JSON Formatter, Regex Tester & More](https://freeclipboard.com/utilities/)
+
+## Blog Posts
+- [Top 10 Free Online Developer Tools That Work Without Login in 2026](https://freeclipboard.com/blog/free-online-developer-tools-no-login/)
+- [QR Code Marketing in 2025: Complete Guide to Boost Engagement & Sales](https://freeclipboard.com/guides/qr-code-marketing-guide/)
+- [Image Format Conversion Guide: PNG, JPG, WebP - When to Use Each Format](https://freeclipboard.com/guides/image-converter-complete-guide/)
+- [The Ultimate Guide to Password Security in 2025: Best Practices & Tools](https://freeclipboard.com/security/ultimate-guide-password-security/)
+- [10 Clipboard Manager Productivity Hacks That Will Save You Hours Every Week](https://freeclipboard.com/productivity/clipboard-manager-productivity-hacks/)
+- [15 Essential Text Formatting Tips Every Writer Should Know in 2025](https://freeclipboard.com/tips/text-formatting-tips-writers/)
+- [How to Use the Free Clipboard Manager Effectively: Complete Guide 2025](https://freeclipboard.com/tutorials/how-to-use-clipboard-manager/)
+

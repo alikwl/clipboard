@@ -1,0 +1,79 @@
+{
+    "id": "online-notepad",
+    "name": "Online Notepad",
+    "version": "1.0.0",
+    "description": "Free online notepad with auto-save, multiple tabs, dark mode, and download support. Type notes directly in your browser — no signup, no download, works offline.",
+    "shortDescription": "Free browser notepad with auto-save",
+    "category": "clipboard",
+    "subcategory": "productivity",
+    "keywords": [
+        "online notepad",
+        "free online notepad",
+        "browser notepad",
+        "notepad online",
+        "online text editor",
+        "scratch pad online",
+        "auto save notepad",
+        "quick notes online",
+        "free notepad no signup",
+        "notepad in browser"
+    ],
+    "tags": [
+        "productivity",
+        "notepad",
+        "text",
+        "writing",
+        "notes",
+        "clipboard"
+    ],
+    "thumbnail": "/assets/images/tools/online-notepad.png",
+    "icon": "📝",
+    "color": "#3B82F6",
+    "featured": true,
+    "popular": true,
+    "new": true,
+    "url": "/tools/online-notepad/",
+    "rating": 4.9,
+    "ratingCount": 0,
+    "usageCount": 0,
+    "lastUpdated": "2026-05-13",
+    "features": [
+        "Auto-save every 2 seconds to browser storage",
+        "Multiple note tabs (up to 5)",
+        "Dark mode with saved preference",
+        "Download note as .txt file",
+        "Copy all text in one click",
+        "Live word, character, and line count",
+        "Adjustable font size (small, medium, large)",
+        "Tab key inserts 4 spaces (code-friendly)",
+        "Ctrl+S manual save shortcut",
+        "Works completely offline",
+        "100% private — data never leaves your browser"
+    ],
+    "useCases": [
+        "Quick notes while browsing",
+        "Temporary scratch pad for ideas",
+        "Writing drafts before publishing",
+        "Students taking class notes",
+        "Developers writing code snippets",
+        "Anyone needing a fast, no-fuss notepad"
+    ],
+    "browserSupport": {
+        "chrome": "90+",
+        "firefox": "88+",
+        "safari": "14+",
+        "edge": "90+"
+    },
+    "privacy": {
+        "dataCollection": false,
+        "localStorage": true,
+        "serverUpload": false,
+        "tracking": false
+    },
+    "seo": {
+        "title": "Online Notepad - Free Browser Notepad with Auto-Save | FreeClipboard",
+        "metaDescription": "Free online notepad with auto-save, multiple tabs, dark mode, and download. Type notes in your browser — no signup, no download needed. Works offline. 100% private.",
+        "ogImage": "/assets/images/og/online-notepad.png",
+        "canonicalUrl": "https://freeclipboard.com/tools/online-notepad/"
+    }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "word-counter",
+  "name": "Word Counter",
+  "version": "2.0.0",
+  "description": "Professional word counter with real-time statistics, reading time calculator, speaking time estimation, and comprehensive text analysis. Perfect for writers, students, content creators, and SEO professionals who need accurate word count and advanced writing metrics.",
+  "shortDescription": "Advanced word & character counter with text statistics",
+  "category": "clipboard",
+  "subcategory": "text-analysis",
+  "keywords": [
+    "word counter",
+    "character counter",
+    "word count tool",
+    "character count",
+    "text analysis",
+    "reading time calculator",
+    "sentence counter",
+    "paragraph counter",
+    "writing statistics",
+    "content length checker",
+    "SEO word count",
+    "word frequency analysis"
+  ],
+  "tags": ["writing", "text", "analysis", "counter", "productivity", "seo", "statistics"],
+  "thumbnail": "/assets/images/tools/word-counter.png",
+  "icon": "📊",
+  "color": "#8B5CF6",
+  "featured": true,
+  "popular": true,
+  "new": false,
+  "url": "/tools/word-counter/",
+  "rating": 4.9,
+  "ratingCount": 1240,
+  "usageCount": 45000,
+  "lastUpdated": "2025-11-30",
+  "features": [
+    "Real-time word & character counting",
+    "Reading time estimation (200 wpm)",
+    "Speaking time calculation (150 wpm)",
+    "Character count with and without spaces",
+    "Sentence and paragraph counter",
+    "Average word length analysis",
+    "Word frequency analysis",
+    "Export statistics to multiple formats",
+    "Copy text and statistics",
+    "Download text as .txt file",
+    "Paste from clipboard",
+    "100% private and offline",
+    "Mobile optimized"
+  ],
+  "useCases": [
+    "Writers meeting word count requirements",
+    "Students writing essays and academic papers",
+    "Content creators optimizing blog posts for SEO",
+    "SEO professionals analyzing content length",
+    "Authors tracking daily writing goals",
+    "Translators estimating project costs",
+    "Social media managers checking character limits",
+    "Presenters calculating speaking time"
+  ],
+  "browserSupport": {
+    "chrome": "90+",
+    "firefox": "88+",
+    "safari": "14+",
+    "edge": "90+"
+  },
+  "privacy": {
+    "dataCollection": false,
+    "localStorage": false,
+    "serverUpload": false,
+    "tracking": false
+  },
+  "seo": {
+    "title": "Word Counter - Instant Word & Character Count Tool | Free Online",
+    "metaDescription": "Professional word counter with real-time statistics, reading time calculator, and text analysis. Count words, characters, sentences & paragraphs instantly. Perfect for writers, students & SEO. 100% free & private.",
+    "ogImage": "/assets/images/og/word-counter.png",
+    "canonicalUrl": "https://freeclipboard.com/tools/word-counter/"
+  }
+}
