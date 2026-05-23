@@ -30,6 +30,7 @@ Optimized for: ChatGPT, Gemini, Perplexity, Claude, Google AI Overviews
 {% endif %}
 
 <!-- Structured Citation Data for AI -->
+{% if page.layout != 'tool' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,6 +59,7 @@ Optimized for: ChatGPT, Gemini, Perplexity, Claude, Google AI Overviews
   }
 }
 </script>
+{% endif %}
 
 <!-- Person Entity (Founder/Author) — for EEAT -->
 <script type="application/ld+json">

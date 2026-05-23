@@ -206,7 +206,7 @@ This avoids duplicate rating signals that can trigger Search Console review warn
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": {{ page.howto_name | default: 'How to Use ' | append: tool_name | jsonify }},
+  "name": {% if page.howto_name %}{{ page.howto_name | jsonify }}{% else %}{{ "How to Use " | append: tool_name | jsonify }}{% endif %},
   "description": {{ page.howto_description | default: page.description | jsonify }},
   "totalTime": "{{ page.howto_time | default: 'PT2M' }}",
   "estimatedCost": {

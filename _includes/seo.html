@@ -105,8 +105,7 @@ Supports: Search Engines, AI Assistants, Voice Search, Featured Snippets
 
 <!-- Page-Specific Schema.org Structured Data -->
 {% if page.schema_type == 'WebApplication' %}
-  {% comment %} WebApplication schema is handled by tool-schema.html in _layouts/tool.html {% endcomment %}
-  {% include schema-speakable.html %}
+  {% comment %} WebApplication and speakable schemas are handled by tool-schema.html in _layouts/tool.html {% endcomment %}
 
 {% elsif page.schema_type == 'Article' %}
 <script type="application/ld+json">
@@ -151,7 +150,7 @@ Supports: Search Engines, AI Assistants, Voice Search, Featured Snippets
 {% endif %}
 
 {% comment %} HowTo Schema if page has steps {% endcomment %}
-{% if page.howto_steps %}
+{% if page.howto_steps and page.layout != 'tool' %}
   {% include schema-howto.html name=page.howto_name description=page.howto_description steps=page.howto_steps time=page.howto_time %}
 {% endif %}
 
